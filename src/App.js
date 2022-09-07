@@ -75,6 +75,7 @@ const Mains = styled.div`
 `;
 const MainCon = styled.div`
   grid-area: Main;
+  width: 100%;
   & button.burger {
     visibility: hidden;
     position: fixed;
@@ -95,6 +96,7 @@ const MainCon = styled.div`
       right: 1.5rem;
       top: 1rem;
       overflow: hidden;
+      width: 100vw;
     }
   }
 `;
@@ -102,7 +104,9 @@ const SidebarCon = styled.div`
   background-color: #292929;
   grid-area: Sidebar;
 `;
+
 const Sidebars = styled.div`
+  width: 100%;
   @media (max-width: 800px) {
     visibility: hidden;
   }
