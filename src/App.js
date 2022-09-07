@@ -60,6 +60,8 @@ const Mains = styled.div`
   background-color: #fff;
   //overflow: hidden;
   //overflow-x: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -67,6 +69,8 @@ const Mains = styled.div`
     grid-template-areas: "Main";
     //overflow: hidden;
     //width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 `;
 const MainCon = styled.div`
