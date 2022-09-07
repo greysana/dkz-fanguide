@@ -78,7 +78,10 @@ const AlbumDetailsCon = styled.div`
   // margin: auto;
   position: relative;
   display: block;
-  width: 100%;
+  width: 80vw;
+  @media (max-width: 800px) {
+    width: 100vw;
+  }
   background-color: #323232;
   //height: 100vh;
   & .containers {

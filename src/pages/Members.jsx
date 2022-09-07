@@ -142,7 +142,10 @@ const MemberCon = styled.div`
   position: relative;
   margin-top: 0px;
   height: 100vh;
-  width: 100%;
+  width: 80vw;
+  @media (max-width: 800px) {
+    width: 100vw;
+  }
   background-color: #323232;
   padding-top: 2rem;
   & h1 {

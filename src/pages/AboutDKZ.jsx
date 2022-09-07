@@ -243,8 +243,12 @@ const AboutCon = styled.div`
   //margin-top: -3rem;
   //height: 100%;
   // overflow-y: scroll;
-  width: 100%;
+
   height: 100vh;
+  width: 80vw;
+  @media (max-width: 800px) {
+    width: 100vw;
+  }
   & .container {
     position: relative;
     margin: auto;
