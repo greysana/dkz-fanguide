@@ -42,7 +42,7 @@ const Gradient = styled.div`
     z-index: 12;
     background: #be3360;
     filter: blur(800px);
-    overflow-y: hidden;
+    overflow: hidden;
   }
   &.green {
     position: absolute;
@@ -53,7 +53,7 @@ const Gradient = styled.div`
     z-index: 6;
     background: #bed542;
     filter: blur(800px);
-    overflow-y: hidden;
+    overflow: hidden;
   }
   &.red2 {
     position: absolute;

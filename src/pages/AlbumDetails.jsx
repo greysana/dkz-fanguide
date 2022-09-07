@@ -352,6 +352,7 @@ const Gradient = styled.div`
     z-index: 5;
     background: #acfaff;
     filter: blur(200px);
+    overflow: hidden;
   }
   &.red {
     position: absolute;
@@ -362,6 +363,7 @@ const Gradient = styled.div`
     z-index: 12;
     background: #be3360;
     filter: blur(800px);
+    overflow: hidden;
   }
   &.green {
     position: absolute;
@@ -372,6 +374,7 @@ const Gradient = styled.div`
     z-index: 6;
     background: #bed542;
     filter: blur(800px);
+    overflow: hidden;
   }
   &.blue2 {
     position: absolute;
@@ -382,6 +385,7 @@ const Gradient = styled.div`
     z-index: 8;
     background: #acfaff;
     filter: blur(800px);
+    overflow: hidden;
   }
 `;
 
