@@ -20,7 +20,7 @@ const MerchCons = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #4a4a4a;
+  //background-color: #4a4a4a;
   transform: skewX(190);
   & h2 {
     position: relative;

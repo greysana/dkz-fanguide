@@ -8,7 +8,7 @@ import { RiAlbumFill } from "react-icons/ri";
 import { MdOndemandVideo } from "react-icons/md";
 import { AiOutlineBarChart } from "react-icons/ai";
 
-const Sidebar = () => {
+const FloatBar = ({ selected }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -17,10 +17,12 @@ const Sidebar = () => {
 
   const _handleClick = (menuItem) => {
     setactive(menuItem);
+    selected(false);
   };
   const handleClick2 = (submenuItem) => {
     setactivesub(submenuItem);
     navigate(`/about/${submenuItem}`);
+    selected(false);
   };
   useEffect(() => {
     const loc = location.pathname;
@@ -226,6 +228,7 @@ const Nav = styled.div`
   border-left: 4px solid #0b0b0b;
   margin: auto;
   margin-left: 3.5rem;
+  width: 100%;
 
   & ul {
     list-style: none;
@@ -359,7 +362,7 @@ const Nav = styled.div`
     top: 2px;
   }
 
-  @media (min-width: 800px) and (max-width: 1280px) {
+  /* @media (min-width: 800px) and (max-width: 1280px) {
     margin-left: 1rem;
     width: 100%;
     display: inline-block;
@@ -491,7 +494,7 @@ const Nav = styled.div`
     }
   }
   @media (min-width: 300px) and (max-width: 800px) {
-  }
+  } */
 `;
 
 const SidebarCon = styled.div`
@@ -504,6 +507,8 @@ const SidebarCon = styled.div`
   justify-content: center;
   align-items: center;
   width: 18%;
+  z-index: 22;
+  width: 250px;
 `;
 
 const Info = styled.div`
@@ -524,4 +529,4 @@ const Info = styled.div`
   }
 `;
 
-export default Sidebar;
+export default FloatBar;

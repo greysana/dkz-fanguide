@@ -2,14 +2,16 @@
   text-align: center;
 
   display: grid;
-  grid-template-columns: 0.18fr 0.82fr;
+  grid-template-columns: 1fr 4.5fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
+  grid-template-areas: "Sidebar Main";
   grid-row-gap: 0px;
   max-width: 2100px;
   margin: auto;
   background-color: #fff;
 }
+
 /* .progress-bar {
   position: fixed;
   top: 0;

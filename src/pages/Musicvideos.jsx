@@ -97,6 +97,7 @@ const MuVidCon = styled.div`
   z-index: 13;
   justify-content: center;
   align-items: center;
+  top: 2rem;
 `;
 const MvCon = styled.div`
   position: relative;
@@ -108,10 +109,47 @@ const MvCon = styled.div`
   padding: 0 10px;
   flex-wrap: wrap;
   display: inline-flex;
-  background: #ebff78;
-  border-radius: 10px;
+  background-color: #d3d3d321;
+  // display: flexbox;
+  border-radius: 15px;
+  border: 1px solid #ffffff6e;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+  // height: 500px;
+  position: relative;
+  border-radius: 5px;
   margin: 20px;
+  padding: 0;
+  padding-bottom: 1rem;
   box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+  @media (max-width: 1000px) and (min-width: 830px) {
+    width: 600px;
+  }
+  @media (min-width: 580px) and (max-width: 830px) {
+    width: 550px;
+    // display: flex;
+    height: 100%;
+  }
+  @media (max-width: 580px) {
+    width: 450px;
+    display: flex;
+    height: 100%;
+  }
+  @media (max-width: 450px) {
+    width: 350px;
+    display: flex;
+    height: 100%;
+  }
+  @media (max-width: 400px) {
+    width: 300px;
+    display: flex;
+    height: 100%;
+  }
+  @media (max-width: 380px) {
+    width: 280px;
+    display: flex;
+    height: 100%;
+  }
 `;
 
 const VidCon = styled.div`
@@ -122,6 +160,23 @@ const VidCon = styled.div`
   height: 100%;
   margin: auto;
   object-fit: contain;
+  & iframe {
+    height: 300px;
+    @media (min-width: 550px) and (max-width: 830px) {
+    }
+    @media (max-width: 550px) {
+      height: 200px;
+      // height: 300px;
+    }
+  }
+  @media (min-width: 550px) and (max-width: 830px) {
+    width: 100%;
+    // height: 300px;
+  }
+  @media (max-width: 550px) {
+    width: 100%;
+    // height: 300px;
+  }
 `;
 
 const Info = styled.div`
@@ -130,12 +185,21 @@ const Info = styled.div`
   width: 35%;
   height: 70%;
 
-  color: #595959;
+  color: #d4d4d4;
+  @media (min-width: 550px) and (max-width: 830px) {
+    width: 100%;
+    & h1 {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 550px) {
+    width: 100%;
+  }
   & h1 {
     margin: 0.5rem;
     margin-top: 1.5rem;
-    font-size: 17px;
-    color: #be3360;
+    font-size: 13px;
+    color: #a7e685;
   }
 
   & ul {
@@ -150,7 +214,7 @@ const Info = styled.div`
     list-style: none;
     & span {
       font-size: 13px;
-      color: #d33b6b;
+      color: #ea779c;
       margin-right: 10px;
     }
   }

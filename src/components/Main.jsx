@@ -40,6 +40,8 @@ const MainCon = styled.div`
   scroll-behavior: smooth;
   height: 100vh;
   top: 0px;
+
+  background-color: #323232;
   //width: 100%;
   //overflow-y: scroll;
 `;

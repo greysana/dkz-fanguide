@@ -113,16 +113,20 @@ const Members = () => {
                 alt={mem?.name}
                 style={{
                   position: "relative",
-                  width: active === index ? "270px" : "210px",
-                  height: active === index ? "350px" : "270px",
+                  className: active === index ? "slide active" : "slide",
+                  width: active === index ? "100%" : "80%",
+                  //height: active === index ? "350px" : "270px",
                   borderRadius: "15px",
-                  margin: "1rem",
+                  //margin: "1rem",
                   boxShadow: "0px 0px 2px 2px rgba(0, 0, 0, 0.3)",
 
-                  top: active === index ? "0rem" : "2rem",
+                  top: active === index ? "0rem" : "3vh",
                   filter:
                     active === index ? "brightness(1)" : "brightness(0.30)",
                   //top: active === index ? "-10px" : "0px",
+                  "@media (max-width: 500px)": {
+                    height: active === index ? "350px" : "270px",
+                  },
                 }}
               />
             </SwiperSlide>
@@ -140,6 +144,7 @@ const MemberCon = styled.div`
   height: 100%;
   width: 100%;
   background-color: #323232;
+  padding-top: 2rem;
   & h1 {
     color: #bed542;
   }
@@ -150,17 +155,33 @@ const SwiperCon = styled.div`
   font-family: sans-serif;
   text-align: center;
   margin: auto;
-  //  margin-top: 1rem;
-  //padding-top: 1rem;
-  top: 3rem;
   width: 900px;
-  height: 500px;
+  //height: 550px;
   justify-content: center;
   align-self: center;
-
+  top: 2rem;
+  z-index: 13;
+  @media (max-width: 1000px) and (min-width: 750px) {
+    width: 650px;
+  }
+  @media (min-width: 550px) and (max-width: 750px) {
+    width: 650px;
+    overflow: visible;
+  }
+  @media (max-width: 550px) {
+    width: 90vw;
+    overflow: hidden;
+  }
+  @media (max-width: 380px) {
+    width: 90vw;
+    overflow: hidden;
+  }
+  & img.slide {
+    //  object-fit: contain;
+  }
   .swiper-button-next,
   .swiper-button-prev {
-    color: rgb(221, 221, 221);
+    color: rgb(255, 255, 255);
     background-color: rgba(185, 185, 185, 0.452);
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.466);
@@ -169,36 +190,57 @@ const SwiperCon = styled.div`
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
     width: 30px;
     padding: 10px;
+    font-weight: 600;
+    // display: none;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.4);
+    @media (min-width: 550px) and (max-width: 750px) {
+      width: 20px;
+      height: 20px;
+    }
+    @media (max-width: 550px) {
+      width: 15px;
+      height: 15px;
+      // object-fit: contain;
+    }
   }
   .swiper-pagination {
     position: relative;
-    margin-top: 1.5rem;
+    margin-top: 5rem;
+    //display: none;
   }
 
   .swiper-button-next::after,
   .swiper-button-prev::after {
     font-size: 22px;
+    // display: none;
   }
   .swiper-pagination-bullet {
-    background-color: rgba(189, 189, 189, 0.644);
+    position: relative;
+    background-color: rgba(189, 189, 189, 0.982);
+    //transform: scale(1.6);
+    margin: 10px;
+    height: 13px;
+    width: 13px;
+    gap: 10px;
+    margin-left: 15px;
+
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);
+    @media (max-width: 550px) {
+      width: 10px;
+      height: 10px;
+      // object-fit: contain;
+      top: -35px;
+    }
   }
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: rgba(255, 255, 255, 0.644);
-    transform: scale(1.6);
+    height: 20px;
+    top: 5px;
+    width: 20px;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
-    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
-      both;
-    animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1)
-      ease-in-out;
-
-    @keyframes scale-up-center {
-      0% {
-        transform: scale(0.8);
-      }
-      100% {
-        transform: scale(1.6);
-      }
+    @media (max-width: 550px) {
+      // object-fit: contain;
+      top: -30px;
     }
   }
 `;
@@ -206,6 +248,9 @@ const SwiperCon = styled.div`
 const Info = styled.div`
   &.heading {
     height: 100px;
+    @media (max-width: 550px) {
+      font-size: 1rem;
+    }
   }
   & span {
     font-weight: 700;

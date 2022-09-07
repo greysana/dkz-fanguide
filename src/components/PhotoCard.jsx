@@ -75,7 +75,7 @@ const PhotoCard = () => {
 const AlbumCon = styled.div`
   display: flex;
   position: relative;
-  width: 100%;
+  width: 90%;
   flex-wrap: wrap;
   margin: auto;
   z-index: 13;
@@ -97,6 +97,34 @@ const Albums = styled.div`
   border-radius: 10px;
   margin: 20px;
   box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+  @media (max-width: 1000px) and (min-width: 830px) {
+    width: 600px;
+  }
+  @media (min-width: 580px) and (max-width: 830px) {
+    width: 550px;
+    display: flex;
+    height: 100%;
+  }
+  @media (max-width: 580px) {
+    width: 450px;
+    display: flex;
+    height: 100%;
+  }
+  @media (max-width: 450px) {
+    width: 350px;
+    display: flex;
+    height: 100%;
+  }
+  @media (max-width: 400px) {
+    width: 300px;
+    display: flex;
+    height: 100%;
+  }
+  @media (max-width: 380px) {
+    width: 280px;
+    display: flex;
+    height: 100%;
+  }
   & button {
     border: none;
     font-weight: 300;
@@ -110,7 +138,25 @@ const Albums = styled.div`
     left: 505px;
     cursor: pointer;
     box-shadow: 0px 0px 3px 2px rgba(62, 0, 22, 0.295);
-
+    @media (min-width: 580px) and (max-width: 830px) {
+      left: 445px;
+    }
+    @media (max-width: 580px) {
+      top: -10px;
+      left: 255px;
+    }
+    @media (max-width: 440px) {
+      top: -10px;
+      left: 205px;
+    }
+    @media (max-width: 380px) {
+      top: -10px;
+      left: 170px;
+    }
+    @media (max-width: 280px) {
+      top: -10px;
+      left: 150px;
+    }
     & i {
       position: relative;
       font-weight: bold;
@@ -131,6 +177,14 @@ const AlImg1 = styled.img`
   height: 100%;
   margin: auto;
   object-fit: contain;
+  @media (min-width: 550px) and (max-width: 830px) {
+    width: 100%;
+    height: 300px;
+  }
+  @media (max-width: 550px) {
+    width: 100%;
+    height: 300px;
+  }
 `;
 
 const Info = styled.div`
@@ -140,11 +194,23 @@ const Info = styled.div`
   height: 70%;
 
   color: #fff;
+  @media (min-width: 550px) and (max-width: 830px) {
+    width: 90%;
+    & h1 {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 550px) {
+    width: 90%;
+  }
   & h1 {
     margin: 0.5rem;
     margin-top: 1.5rem;
     font-size: 17px;
     color: #fff;
+    @media (max-width: 550px) {
+      font-size: 14px;
+    }
   }
   & ul {
     margin: auto;
@@ -156,10 +222,17 @@ const Info = styled.div`
   & li {
     text-decoration: none;
     list-style: none;
+    @media (max-width: 550px) {
+      font-size: 13px;
+    }
     & span {
       font-size: 13px;
+
       color: #dfdfdf;
       margin-right: 10px;
+      @media (max-width: 550px) {
+        font-size: 12px;
+      }
     }
   }
   & hr {

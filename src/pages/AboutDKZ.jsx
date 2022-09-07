@@ -201,10 +201,11 @@ const AboutDKZ = () => {
                   <img
                     src={mem?.img}
                     alt={mem?.id}
+                    className="slide"
                     style={{
                       position: "relative",
-                      width: "550px",
-                      height: "350px",
+                      // width: "90%",
+                      // height: "50vh",
                       borderRadius: "20px",
                       //margin: "1.3rem",
                       boxShadow: "0px 0px 2px 2px rgba(0, 0, 0, 0.3)",
@@ -255,22 +256,11 @@ const AboutCon = styled.div`
     border-radius: 10px;
     z-index: 14;
     //box-shadow: 0px 0px 8px 2px rgba(44, 44, 44, 0.2);
-    & .imagecon {
-      position: relative;
-      top: 4rem;
-      margin: 1rem;
-      height: 400px;
-      width: 60%;
-      z-index: 13;
-      // background-color: #d4ffe3;
-      border-radius: 50px;
-      //box-shadow: 0px 0px 8px 4px rgba(45, 45, 45, 0.1);
-      //border: 1px solid #afffc4a2;
-    }
   }
   & .containers {
     background-color: #323232;
     // height: 100%;
+    width: 80%;
   }
 `;
 const Gradient = styled.div`
@@ -349,6 +339,33 @@ const SwiperCon = styled.div`
   align-self: center;
   top: 2rem;
   z-index: 13;
+  @media (max-width: 1000px) and (min-width: 750px) {
+    height: 500px;
+  }
+  @media (min-width: 550px) and (max-width: 750px) {
+    width: 90vw;
+    height: 460px;
+  }
+  @media (max-width: 550px) {
+    width: 90vw;
+    height: 350px;
+  }
+  & img.slide {
+    height: 400px;
+    width: 90%;
+    @media (max-width: 1000px) and (min-width: 750px) {
+      height: 400px;
+    }
+    @media (min-width: 550px) and (max-width: 750px) {
+      width: 90vw;
+      height: 350px;
+    }
+    @media (max-width: 550px) {
+      width: 90%;
+      height: 250px;
+      // object-fit: contain;
+    }
+  }
   .swiper-button-next,
   .swiper-button-prev {
     color: rgb(255, 255, 255);
@@ -363,6 +380,15 @@ const SwiperCon = styled.div`
     font-weight: 600;
     // display: none;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.4);
+    @media (min-width: 550px) and (max-width: 750px) {
+      width: 20px;
+      height: 20px;
+    }
+    @media (max-width: 550px) {
+      width: 15px;
+      height: 15px;
+      // object-fit: contain;
+    }
   }
   .swiper-pagination {
     position: relative;

@@ -50,7 +50,7 @@ const AlbumDetails = () => {
           {album?.disco.map((dis) => (
             <li>
               <div className="card">
-                <img src="" alt="" />
+                <img src={dis.images} alt="" />
                 <div className="detail">
                   <h2>Title:</h2>
                   <h3>{dis.title}</h3>
@@ -80,6 +80,7 @@ const AlbumDetailsCon = styled.div`
   display: block;
   width: 100%;
   background-color: #323232;
+
   & .containers {
     background-color: #323232;
     height: 100%;
@@ -106,17 +107,21 @@ const AlbumDetailsCon = styled.div`
 
     z-index: 15;
     box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
-  }
+    @media (max-width: 800px) {
+      width: 90vw;
 
-  & .albumPic {
-    background-color: #13131346;
+      height: 100%;
+    }
+    & .albumPic {
+      background-color: #13131346;
 
-    position: relative;
-    width: 90%;
-    height: 300px;
-    margin: auto;
-    margin-top: 1rem;
-    object-fit: contain;
+      position: relative;
+      width: 90%;
+      height: 300px;
+      margin: auto;
+      margin-top: 1rem;
+      object-fit: contain;
+    }
   }
   & .discoCon {
     position: relative;
@@ -135,46 +140,110 @@ const AlbumDetailsCon = styled.div`
     margin-top: 4rem;
     z-index: 15;
     box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+    @media (max-width: 800px) {
+      width: 90vw;
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+    }
     & ul {
       list-style: none;
+      padding-left: 0px;
       & .card {
-        height: 120px;
-        width: 620px;
+        // height: 120px;
+        width: 700px;
         background-color: #dedede21;
         border-radius: 15px;
         border: 1px solid #ffffff6e;
         box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
         margin: 1rem auto;
+        margin-left: 0px;
+        padding: 1rem;
         display: inline-flex;
+        @media (max-width: 800px) {
+          width: 80vw;
+        }
+        @media (max-width: 600px) {
+          width: 80vw;
+        }
+        @media (max-width: 580px) {
+          display: flex;
+          flex-wrap: wrap;
+          width: 90vw;
+          justify-content: center;
+          align-items: center;
+          padding: 0;
+        }
         & img {
           height: 90px;
           width: 90px;
           margin: auto;
           margin-left: 0.5rem;
+          background-color: #5a101052;
+          object-fit: contain;
+          @media (max-width: 800px) {
+            width: 90px;
+            height: 90px;
+          }
+          @media (max-width: 600px) {
+            width: 90px;
+            height: 90px;
+          }
+          @media (max-width: 580px) {
+            margin: auto;
+            margin-top: 1rem;
+            width: 80vw;
+            height: 100%;
+          }
         }
         & .detail {
-          width: 270px;
+          width: 40%;
           display: inline-flex;
           padding: 1rem;
+          @media (max-width: 800px) {
+            width: 100%;
+            height: 60px;
+          }
           & h2 {
             font-size: 1rem;
             color: #dddddd;
+            @media (max-width: 550px) {
+              font-size: 0.8rem;
+            }
           }
           & h3 {
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin: auto;
+            @media (max-width: 550px) {
+              font-size: 0.8rem;
+            }
           }
         }
         & .link {
-          width: 270px;
+          width: 40vw;
           display: inline-flex;
+          @media (max-width: 580px) {
+            width: 60vw;
+          }
           & .yt {
             height: 70px;
             width: 70px;
             background-color: #ea2727;
             border-radius: 15px;
             margin: 1.5rem auto;
+            @media (max-width: 800px) {
+              width: 60px;
+              height: 60px;
+            }
+            @media (max-width: 600px) {
+              width: 50px;
+              height: 50px;
+            }
+            @media (max-width: 380px) {
+              width: 50px;
+              height: 50px;
+            }
           }
           & .spot {
             height: 70px;
@@ -182,6 +251,18 @@ const AlbumDetailsCon = styled.div`
             background-color: #53ea56;
             border-radius: 15px;
             margin: 1.5rem auto;
+            @media (max-width: 800px) {
+              width: 60px;
+              height: 60px;
+            }
+            @media (max-width: 600px) {
+              width: 50px;
+              height: 50px;
+            }
+            @media (max-width: 380px) {
+              width: 50px;
+              height: 50px;
+            }
           }
           & .apl {
             height: 70px;
@@ -189,6 +270,18 @@ const AlbumDetailsCon = styled.div`
             background-color: #1f1d1d;
             border-radius: 15px;
             margin: 1.5rem auto;
+            @media (max-width: 800px) {
+              width: 60px;
+              height: 60px;
+            }
+            @media (max-width: 600px) {
+              width: 50px;
+              height: 50px;
+            }
+            @media (max-width: 380px) {
+              width: 50px;
+              height: 50px;
+            }
           }
         }
       }
@@ -197,10 +290,20 @@ const AlbumDetailsCon = styled.div`
   & .contentImg {
     width: 700px;
     margin: auto;
+    @media (max-width: 800px) {
+      width: 90vw;
+
+      height: 100%;
+    }
     & img {
       margin: auto;
       margin-top: -0.5rem;
       width: 600px;
+      @media (max-width: 800px) {
+        width: 90vw;
+
+        height: 100%;
+      }
     }
   }
 `;

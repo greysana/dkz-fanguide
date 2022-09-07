@@ -16,21 +16,22 @@ const YoutubeEmbeds = () => {
 const YtCon = styled.div`
   position: relative;
   margin: auto;
-  width: 50%;
+  // width: 50%;
   z-index: 20;
   top: 80px;
   // width: 789px;
   height: 100%;
 
   border-radius: 10px;
+
   & h1 {
     position: relative;
     text-align: left;
-    left: 0px;
+    left: 2rem;
     top: 0px;
     font-size: 20px;
     font-weight: bold;
-    color: #4a4a4a;
+    color: #dbdbdb;
   }
   & h2 {
     position: relative;
@@ -38,7 +39,7 @@ const YtCon = styled.div`
     margin-top: 1.5rem;
     font-size: 17px;
     font-weight: bold;
-    color: #4a4a4a;
+    color: #ececec;
   }
 `;
 

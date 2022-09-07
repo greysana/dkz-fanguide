@@ -28,20 +28,19 @@ const MemberCon = ({ member }) => {
                 <h2>{mem.name}</h2>
               </motion.div>
             ))}
-            <div className="empty"></div>
-            <div className="info">
-              <h1>Former Member</h1>
-              <hr />
-              <motion.div
-                className="cards"
-                key={1}
-                whileHover={{ scale: 1.02 }}
-                onClick={() => navigate(`/members/Wondae 원대`)}
-              >
-                <img src={Wondae} alt={"wondae 원대"} />
-                <h2>Wondae 원대</h2>
-              </motion.div>
-            </div>
+          </div>
+          <div className="info">
+            <h1>Former Member</h1>
+            <hr />
+            <motion.div
+              className="cards"
+              key={1}
+              whileHover={{ scale: 1.02 }}
+              onClick={() => navigate(`/members/Wondae 원대`)}
+            >
+              <img src={Wondae} alt={"wondae 원대"} />
+              <h2>Wondae 원대</h2>
+            </motion.div>
           </div>
         </div>
       </MemberCons>
@@ -81,7 +80,7 @@ const MemberCons = styled.div`
 
   & .con {
     position: relative;
-    margin: auto;
+
     width: 80%;
     background-color: #91919122;
     // display: flex;
@@ -89,22 +88,31 @@ const MemberCons = styled.div`
     border: 1px solid #ffffff6e;
     // flex-wrap: wrap;
     z-index: 13;
+    margin: auto;
+    padding: 1rem;
+    margin-left: 0rem;
+    margin: auto;
+
     // height: 100%;
   }
   & .cons {
     position: relative;
-    margin: 2rem;
-    margin-left: 3.5rem;
+
     width: 100%;
-    //background-color: #91919122;
+
     display: flex;
+    margin: auto;
     border-radius: 15px;
-    //border: 1px solid #ffffff6e;
+
     flex-wrap: wrap;
     z-index: 13;
-    // height: 100%;
+
+    margin-left: 0rem;
+    margin: auto;
+    // height: 100%;;
   }
   & .card {
+    position: relative;
     width: 180px;
     height: 230px;
     border-radius: 15px;
@@ -112,6 +120,14 @@ const MemberCons = styled.div`
     background-color: #dddddd;
     cursor: pointer;
     box-shadow: 0px 0px 8px 3px rgba(44, 44, 44, 0.5);
+
+    margin-left: 0rem;
+    margin: 1rem auto;
+    @media (max-width: 500px) {
+      width: 150px;
+      height: 200px;
+    }
+
     & h2 {
       font-size: 1rem;
       font-weight: 400;
@@ -127,8 +143,17 @@ const MemberCons = styled.div`
     border-radius: 15px;
     margin: 20px;
     background-color: #dddddd;
+    margin-left: 0rem;
+    margin: 1rem auto;
     cursor: pointer;
     box-shadow: 0px 0px 8px 3px rgba(44, 44, 44, 0.5);
+
+    margin: 1rem auto;
+    @media (max-width: 500px) {
+      width: 150px;
+      height: 200px;
+    }
+
     & h2 {
       font-size: 1rem;
       font-weight: 400;
@@ -137,6 +162,12 @@ const MemberCons = styled.div`
     }
   }
   & .info {
+    margin-left: 0rem;
+    margin: 1rem auto;
+    @media (max-width: 750px) {
+      margin-left: 0rem;
+      margin: 1rem auto;
+    }
     & h1 {
       font-size: 1rem;
       margin: 0.5rem;
@@ -148,12 +179,26 @@ const MemberCons = styled.div`
     height: 270px;
     border-radius: 15px;
     margin: 20px;
+    margin-left: 0rem;
+    margin: 1rem auto;
+    @media (max-width: 750px) {
+      visibility: hidden;
+      width: 0px;
+      height: 0px;
+      margin: 0px;
+      margin-left: 0rem;
+      margin: 1rem auto;
+    }
   }
   & img {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     width: 180px;
     height: 190px;
+    @media (max-width: 500px) {
+      width: 150px;
+      height: 160px;
+    }
   }
 
   & hr {

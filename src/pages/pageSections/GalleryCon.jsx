@@ -79,6 +79,18 @@ const GalleryCons = styled.div`
         object-fit: cover;
         cursor: pointer;
         filter: brightness(0.8);
+        @media (max-width: 1200px) and (min-width: 768px) {
+          width: 150px;
+          height: 150px;
+        }
+        @media (min-width: 500px) and (max-width: 768px) {
+          width: 150px;
+          height: 150px;
+        }
+        @media (max-width: 500px) {
+          width: 120px;
+          height: 120px;
+        }
         &.gallery.last {
           filter: brightness(0.3);
           &:hover {

@@ -86,10 +86,10 @@ const LatestBanner = () => {
                 <img
                   src={mem?.img}
                   alt={mem?.id}
+                  className="slide"
                   style={{
                     position: "relative",
-                    width: "630px",
-                    height: "370px",
+
                     borderRadius: "15px",
                     margin: "1.3rem",
                     boxShadow: "0px 0px 2px 2px rgba(0, 0, 0, 0.3)",
@@ -149,14 +149,41 @@ const SwiperCon = styled.div`
   font-family: sans-serif;
   text-align: center;
   margin: auto;
-  //  margin-top: 1rem;
-  //padding-top: 1rem;
-  top: 3rem;
   width: 700px;
-  height: 500px;
+  height: 550px;
   justify-content: center;
   align-self: center;
-  z-index: 10;
+  top: 2rem;
+  z-index: 13;
+  @media (max-width: 1000px) and (min-width: 750px) {
+    height: 450px;
+    width: 650px;
+    //width: 85%;
+  }
+  @media (min-width: 550px) and (max-width: 750px) {
+    width: 85vw;
+    height: 460px;
+  }
+  @media (max-width: 550px) {
+    width: 90vw;
+    height: 350px;
+  }
+  & img.slide {
+    height: 400px;
+    width: 90%;
+    @media (max-width: 1000px) and (min-width: 750px) {
+      height: 400px;
+    }
+    @media (min-width: 550px) and (max-width: 750px) {
+      width: 90%;
+      height: 350px;
+    }
+    @media (max-width: 550px) {
+      width: 90%;
+      height: 250px;
+      // object-fit: contain;
+    }
+  }
   .swiper-button-next,
   .swiper-button-prev {
     color: rgb(255, 255, 255);
@@ -169,16 +196,28 @@ const SwiperCon = styled.div`
     width: 30px;
     padding: 10px;
     font-weight: 600;
+    // display: none;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.4);
+    @media (min-width: 550px) and (max-width: 750px) {
+      width: 20px;
+      height: 20px;
+    }
+    @media (max-width: 550px) {
+      width: 15px;
+      height: 15px;
+      // object-fit: contain;
+    }
   }
   .swiper-pagination {
     position: relative;
     margin-top: 5rem;
+    //display: none;
   }
 
   .swiper-button-next::after,
   .swiper-button-prev::after {
     font-size: 22px;
+    // display: none;
   }
   .swiper-pagination-bullet {
     position: relative;
@@ -200,48 +239,6 @@ const SwiperCon = styled.div`
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
   }
 `;
-// const DotsCon = styled.div`
-//   position: relative;
-//   top: 40px;
-//   left: 10px;
-// `;
-
-// const Dots = styled.div`
-//   background-color: #e1e1e1b5;
-//   height: 10px;
-//   width: 10px;
-//   margin-right: 20px;
-//   border-radius: 50%;
-//   position: relative;
-//   display: inline-block;
-//   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
-//   top: -40px;
-//   z-index: 10;
-//   border: none;
-//   cursor: pointer;
-//   -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
-//     both;
-//   animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) ease-in-out;
-
-//   @keyframes scale-up-center {
-//     0% {
-//       transform: scale(0.5);
-//     }
-//     100% {
-//       transform: scale(1.2);
-//     }
-//   }
-//   &.active {
-//     top: -38px;
-//     height: 17px;
-//     width: 17px;
-
-//     background-color: #fff;
-//   }
-//   &:hover {
-//     border: 0.5px solid #fff;
-//   }
-// `;
 
 const Shadow = styled.div`
   position: absolute;
@@ -260,18 +257,31 @@ const Shadow = styled.div`
 const Con1 = styled.div`
   position: relative;
   margin: auto;
-  z-index: 10;
+  z-index: 20;
   top: 40px;
   height: 600px;
   width: 615px;
+  @media (max-width: 1000px) and (min-width: 800px) {
+    height: 500px;
+    width: 90%;
+  }
+  @media (min-width: 550px) and (max-width: 800px) {
+    width: 90%;
+    height: 500px;
+  }
+  @media (max-width: 550px) {
+    width: 90%;
+    height: 400px;
+  }
 
   & text {
     position: relative;
-    top: 110px;
+    top: 90px;
     font-size: 17px;
+    text-align: left;
     font-weight: bold;
-    color: #4a4a4a;
-    left: -220px;
+    color: #dbdbdb;
+    left: -35%;
   }
 `;
 
@@ -280,32 +290,75 @@ const DongreeBody = styled.img`
   position: absolute;
   width: 240.48px;
   height: 221.62px;
-  top: 30px;
+  top: 10px;
   left: 250px;
   //box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.3);
   z-index: 8;
+  @media (max-width: 550px) {
+    width: 200.48px;
+    height: 191.62px;
+    top: 25px;
+    left: 50%;
+  }
+  @media (max-width: 440px) {
+    width: 170.48px;
+    height: 151.62px;
+    top: 35px;
+    left: 50%;
+  }
+  @media (max-width: 340px) {
+    width: 160.48px;
+    height: 141.62px;
+    top: 45px;
+    left: 48%;
+  }
 `;
 const Dongreeleft = styled.img`
   position: absolute;
-  z-index: 11;
+  z-index: 21;
   width: 69.4px;
   height: 51.89px;
-  top: 115px;
+  top: 95px;
   left: 250px;
+  @media (max-width: 550px) {
+    width: 58px;
+    height: 51px;
+    top: 95px;
+    left: 50%;
+  }
+  @media (max-width: 400px) {
+    width: 48px;
+    height: 41px;
+    top: 105px;
+    left: 50%;
+  }
   //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 `;
 const Dongreeright = styled.img`
   position: absolute;
-  z-index: 11;
+  z-index: 21;
   width: 49.4px;
   height: 31.89px;
   width: 69.4px;
   height: 51.89px;
-  top: 115px;
+  top: 95px;
   left: 430px;
   // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
   transform: matrix(-1, 0, 0, 1, 0, 0);
   transform: scaleX(-1);
+
+  @media (max-width: 550px) {
+    width: 58px;
+    height: 51px;
+    top: 95px;
+    left: 83%;
+  }
+  @media (max-width: 400px) {
+    width: 48px;
+    height: 41px;
+    top: 105px;
+    left: 85%;
+  }
 `;
 
 export default LatestBanner;

@@ -71,20 +71,37 @@ const GalleryCons = styled.div`
     z-index: 13;
 
     & .imagesCon {
-      margin: 1rem;
+      // margin: 1rem;
       margin-top: 2rem;
       display: flex;
       flex-wrap: wrap;
+      margin: auto;
       justify-content: center;
 
       & img {
         height: 200px;
         width: 200px;
         border-radius: 2px;
-        gap: 5;
+        // gap: 5;
         object-fit: cover;
         cursor: pointer;
         filter: brightness(0.8);
+        @media (max-width: 1200px) and (min-width: 768px) {
+          width: 150px;
+          height: 150px;
+        }
+        @media (min-width: 500px) and (max-width: 768px) {
+          width: 150px;
+          height: 150px;
+        }
+        @media (max-width: 500px) {
+          width: 120px;
+          height: 120px;
+        }
+        @media (max-width: 320px) {
+          width: 100px;
+          height: 100px;
+        }
         &.gallery.last {
           filter: brightness(0.3);
           &:hover {

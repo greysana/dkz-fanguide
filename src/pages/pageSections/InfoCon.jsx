@@ -32,7 +32,7 @@ const InfoCon = () => {
             consist of 7 members:{" "}
             <b>
               {" "}
-              Kyoungyoon, Munik, Jaechan, Jonghyeong, Giseok, Mingyu, & Sehyeon
+              Kyoungyoon, Munik, Jaechan, Jonghyeong, Giseok, Mingyu, & Sehyeon
             </b>
             . <br /> <br />
             The member Munik is currently inactive/ on hiatus due to he is
@@ -155,11 +155,13 @@ const InfoCons = styled.div`
   // height: 100%;
   background-color: #323232;
   width: 100%;
+
   & .infoCons {
     display: flex;
     width: 80%;
     margin: auto;
     flex-wrap: wrap;
+
     & .infocon {
       background-color: #91919122;
       // display: flexbox;
@@ -169,7 +171,7 @@ const InfoCons = styled.div`
       margin: 1rem auto;
       // height: 500px;
       position: relative;
-      width: 600px;
+      width: 100%;
       z-index: 15;
       & p {
         color: #ffffff;
@@ -462,6 +464,13 @@ const InfoCons = styled.div`
     top: -8rem;
     right: 3rem;
     z-index: 10;
+    @media (max-width: 800px) {
+      height: 500px;
+      width: 500px;
+      right: -6rem;
+      filter: brightness(0.3);
+      overflow: hidden;
+    }
   }
   & .heading {
     position: relative;
@@ -501,6 +510,43 @@ const InfoCons = styled.div`
       left: 1rem;
       color: #ffffff96;
       text-shadow: 0px 4px 2px rgba(44, 44, 44, 0.5);
+    }
+    @media (max-width: 800px) {
+      //  width: 50%;
+      & h1 {
+        position: relative;
+        z-index: 13;
+        color: #efefef;
+        font-size: 1.8rem;
+        text-shadow: 0px 4px 2px rgba(44, 44, 44, 0.5);
+      }
+      & span {
+        position: absolute;
+        top: -1rem;
+        left: 3rem;
+        z-index: 12;
+        font-weight: 600;
+        font-size: 4rem;
+        color: #c4c4c41f;
+      }
+      & h2 {
+        position: relative;
+        z-index: 13;
+        font-size: 1rem;
+        left: 5rem;
+        top: -1.5rem;
+        color: #ffffff96;
+        text-shadow: 0px 4px 2px rgba(44, 44, 44, 0.5);
+      }
+      & h3 {
+        position: relative;
+        z-index: 13;
+        font-size: 1rem;
+        margin-top: 2rem;
+        left: 1rem;
+        color: #ffffff96;
+        text-shadow: 0px 4px 2px rgba(44, 44, 44, 0.5);
+      }
     }
   }
 `;

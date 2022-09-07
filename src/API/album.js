@@ -31,14 +31,14 @@ export const cardItem = [
     disco: [
       {
         title: "Cupid",
-        images: "",
+        images: Album1,
         ytLink: "",
         spLink: "",
         aplLink: "",
       },
       {
         title: "Cupid: Instrumental",
-        images: "",
+        images: Album1,
         ytLink: "",
         spLink: "",
         aplLink: "",
