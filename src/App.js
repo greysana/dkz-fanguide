@@ -58,14 +58,14 @@ const Mains = styled.div`
   // width: 100%;
   margin: auto;
   background-color: #fff;
-  overflow: hidden;
-
+  //overflow: hidden;
+  //overflow-x: scroll;
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-template-areas: "Main";
-    //overflow-x: scroll;
+    //overflow: hidden;
     //width: 100vw;
   }
 `;
