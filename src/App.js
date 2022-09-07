@@ -57,12 +57,14 @@ const Mains = styled.div`
   max-width: 2100px;
 
   width: 100vw;
+  height: 100vh;
   margin: auto;
   background-color: #fff;
   //overflow: hidden;
   //overflow-x: scroll;
   overflow-x: hidden;
   overflow-y: hidden;
+
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -72,13 +74,15 @@ const Mains = styled.div`
     width: 100vw;
     overflow-x: hidden;
     overflow-y: hidden;
+    height: 100vh;
   }
 `;
 const MainCon = styled.div`
   grid-area: Main;
   width: 80vw;
   overflow: hidden;
-  @media (min-width: 300px) and (max-width: 800px) {
+  height: 100vh;
+  @media (max-width: 800px) {
     width: 100vw;
   }
   & button.burger {
@@ -101,7 +105,7 @@ const MainCon = styled.div`
       right: 1.5rem;
       top: 1rem;
       overflow: hidden;
-      width: 100vw;
+      //width: 100vw;
     }
   }
 `;
@@ -113,6 +117,7 @@ const SidebarCon = styled.div`
 
 const Sidebars = styled.div`
   width: 100%;
+  height: 100vh;
   @media (max-width: 800px) {
     visibility: hidden;
   }
