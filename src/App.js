@@ -49,8 +49,8 @@ const Mains = styled.div`
   text-align: center;
 
   display: grid;
-  grid-template-columns: 18vw 82vw;
-  grid-template-rows: 100vh;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-template-areas: "Sidebar Main";
   grid-row-gap: 0px;
@@ -79,7 +79,7 @@ const Mains = styled.div`
 `;
 const MainCon = styled.div`
   grid-area: Main;
-  width: 80vw;
+  //width: 80vw;
   overflow: hidden;
   height: 100vh;
   @media (max-width: 800px) {
@@ -112,7 +112,6 @@ const MainCon = styled.div`
 const SidebarCon = styled.div`
   background-color: #292929;
   grid-area: Sidebar;
-  width: 20vw;
 `;
 
 const Sidebars = styled.div`

@@ -503,7 +503,6 @@ const SidebarCon = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
-  width: 18%;
 `;
 
 const Info = styled.div`
