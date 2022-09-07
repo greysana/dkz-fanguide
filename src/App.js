@@ -55,7 +55,8 @@ const Mains = styled.div`
   grid-template-areas: "Sidebar Main";
   grid-row-gap: 0px;
   max-width: 2100px;
-  // width: 100%;
+
+  width: 100vw;
   margin: auto;
   background-color: #fff;
   //overflow: hidden;
