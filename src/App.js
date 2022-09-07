@@ -76,6 +76,7 @@ const Mains = styled.div`
 const MainCon = styled.div`
   grid-area: Main;
   width: 100%;
+  overflow: hidden;
   & button.burger {
     visibility: hidden;
     position: fixed;
