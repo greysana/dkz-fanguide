@@ -44,6 +44,31 @@ function App() {
     </Mains>
   );
 }
+
+const Mains = styled.div`
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-template-areas: "Sidebar Main";
+  grid-row-gap: 0px;
+  max-width: 2100px;
+  // width: 100%;
+  margin: auto;
+  background-color: #fff;
+  overflow: hidden;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-template-areas: "Main";
+    //overflow-x: scroll;
+    //width: 100vw;
+  }
+`;
 const MainCon = styled.div`
   grid-area: Main;
   & button.burger {
@@ -56,6 +81,7 @@ const MainCon = styled.div`
     cursor: pointer;
     font-weight: bold;
     z-index: 35;
+    overflow: hidden;
     &:hover {
       color: #bed542;
     }
@@ -64,30 +90,8 @@ const MainCon = styled.div`
       z-index: 30;
       right: 1.5rem;
       top: 1rem;
+      overflow: hidden;
     }
-  }
-`;
-const Mains = styled.div`
-  text-align: center;
-
-  display: grid;
-  grid-template-columns: 1fr 4.5fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-template-areas: "Sidebar Main";
-  grid-row-gap: 0px;
-  max-width: 2100px;
-  width: 100%;
-  margin: auto;
-  background-color: #fff;
-  overflow-y: scroll;
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-template-areas: "Main";
-    overflow-x: scroll;
-    //width: 100vw;
   }
 `;
 const SidebarCon = styled.div`
