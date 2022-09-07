@@ -80,7 +80,7 @@ const Mains = styled.div`
   width: 100%;
   margin: auto;
   background-color: #fff;
-  overflow: hidden;
+  overflow-y: scroll;
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
