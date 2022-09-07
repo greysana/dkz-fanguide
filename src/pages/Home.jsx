@@ -32,6 +32,7 @@ const HomeCon = styled.div`
   position: relative;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   &.1 {
     animation: entrance 2s ease-in-out;
     @keyframes entrance {

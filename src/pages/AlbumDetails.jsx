@@ -80,7 +80,7 @@ const AlbumDetailsCon = styled.div`
   display: block;
   width: 100%;
   background-color: #323232;
-
+  //height: 100vh;
   & .containers {
     background-color: #323232;
     height: 100%;

@@ -20,6 +20,7 @@ const HomeCon = styled.div`
   position: relative;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 `;
 
 const Gradient = styled.div`

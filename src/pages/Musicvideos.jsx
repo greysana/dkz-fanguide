@@ -92,6 +92,7 @@ const MuVidCon = styled.div`
   display: flex;
   position: relative;
   width: 100%;
+  height: 100vh;
   flex-wrap: wrap;
   margin: auto;
   z-index: 13;

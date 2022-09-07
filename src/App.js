@@ -57,7 +57,7 @@ const Mains = styled.div`
   max-width: 2100px;
 
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   margin: auto;
   background-color: #fff;
   //overflow: hidden;

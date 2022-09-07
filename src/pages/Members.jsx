@@ -141,7 +141,7 @@ const Members = () => {
 const MemberCon = styled.div`
   position: relative;
   margin-top: 0px;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: #323232;
   padding-top: 2rem;

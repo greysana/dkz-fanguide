@@ -242,8 +242,9 @@ const AboutCon = styled.div`
 
   //margin-top: -3rem;
   //height: 100%;
+  // overflow-y: scroll;
   width: 100%;
-
+  height: 100vh;
   & .container {
     position: relative;
     margin: auto;
@@ -283,7 +284,7 @@ const Gradient = styled.div`
     z-index: 12;
     background: #be3360;
     filter: blur(800px);
-    overflow: hidden;
+    overflow-x: hidden;
   }
   &.green {
     position: absolute;
