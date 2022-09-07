@@ -49,8 +49,8 @@ const Mains = styled.div`
   text-align: center;
 
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 18vw 82vw;
+  grid-template-rows: 100vh;
   grid-column-gap: 0px;
   grid-template-areas: "Sidebar Main";
   grid-row-gap: 0px;
