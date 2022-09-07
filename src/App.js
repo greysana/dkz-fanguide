@@ -49,7 +49,7 @@ const Mains = styled.div`
   text-align: center;
 
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-template-areas: "Sidebar Main";
@@ -71,7 +71,7 @@ const Mains = styled.div`
     grid-column-gap: 0px;
     grid-template-areas: "Main";
     //overflow: hidden;
-    width: 100vw;
+    // width: 100vw;
     overflow-x: hidden;
     overflow-y: hidden;
     height: 100vh;
@@ -79,7 +79,7 @@ const Mains = styled.div`
 `;
 const MainCon = styled.div`
   grid-area: Main;
-  //width: 80vw;
+  width: 80vw;
   overflow: hidden;
   height: 100vh;
   @media (max-width: 800px) {
@@ -115,7 +115,7 @@ const SidebarCon = styled.div`
 `;
 
 const Sidebars = styled.div`
-  width: 100%;
+  //width: 100%;
   height: 100vh;
   @media (max-width: 800px) {
     visibility: hidden;

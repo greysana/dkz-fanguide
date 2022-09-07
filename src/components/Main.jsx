@@ -42,7 +42,7 @@ const MainCon = styled.div`
   top: 0px;
 
   background-color: #323232;
-  width: 85vw;
+  // width: 85vw;
   //overflow-y: scroll;
 `;
 
