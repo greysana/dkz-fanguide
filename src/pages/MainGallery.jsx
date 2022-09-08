@@ -52,7 +52,7 @@ const GalleryCons = styled.div`
   background-color: #323232;
   padding-top: 2rem;
   padding-bottom: 3rem;
-  width: 80vw;
+  // width: 80vw;
   @media (max-width: 800px) {
     width: 100vw;
   }

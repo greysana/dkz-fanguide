@@ -46,7 +46,6 @@ function App() {
 }
 
 const Mains = styled.div`
-  position: fixed;
   text-align: center;
 
   display: grid;
@@ -56,13 +55,8 @@ const Mains = styled.div`
   grid-template-areas: "Sidebar Main";
   grid-row-gap: 0px;
   max-width: 2100px;
-
-  width: 100vw;
-  // height: 100vh;
   margin: auto;
   background-color: #fff;
-  //overflow: hidden;
-  //overflow-x: scroll;
   overflow-x: hidden;
   overflow-y: hidden;
 
@@ -75,14 +69,14 @@ const Mains = styled.div`
     // width: 100vw;
     overflow-x: hidden;
     overflow-y: hidden;
-    height: 100vh;
+    // height: 100vh;
   }
 `;
 const MainCon = styled.div`
   grid-area: Main;
-  width: 80vw;
   overflow: hidden;
-  height: 100vh;
+  //height: 100vh;
+
   @media (max-width: 800px) {
     width: 100vw;
   }

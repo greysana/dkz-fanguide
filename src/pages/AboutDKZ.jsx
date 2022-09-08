@@ -245,7 +245,7 @@ const AboutCon = styled.div`
   // overflow-y: scroll;
 
   height: 100vh;
-  width: 80vw;
+  // width: 80vw;
   @media (max-width: 800px) {
     width: 100vw;
   }

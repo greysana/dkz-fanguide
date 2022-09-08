@@ -91,7 +91,7 @@ const Musicvideos = () => {
 const MuVidCon = styled.div`
   display: flex;
   position: relative;
-  width: 80vw;
+  // width: 80vw;
   @media (max-width: 800px) {
     width: 100vw;
   }

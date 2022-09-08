@@ -78,7 +78,7 @@ const AlbumDetailsCon = styled.div`
   // margin: auto;
   position: relative;
   display: block;
-  width: 80vw;
+  //width: 80vw;
   @media (max-width: 800px) {
     width: 100vw;
   }
