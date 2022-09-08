@@ -46,6 +46,7 @@ function App() {
 }
 
 const Mains = styled.div`
+  position: fixed;
   text-align: center;
 
   display: grid;
