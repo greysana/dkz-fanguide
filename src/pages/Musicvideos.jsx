@@ -91,9 +91,9 @@ const Musicvideos = () => {
 const MuVidCon = styled.div`
   display: flex;
   position: relative;
-  // width: 80vw;
+  width: 80vw;
   @media (max-width: 800px) {
-    width: 100vw;
+    //  width: 100vw;
   }
   height: 100vh;
   flex-wrap: wrap;
@@ -128,31 +128,28 @@ const MvCon = styled.div`
   box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
   @media (max-width: 1000px) and (min-width: 830px) {
     width: 600px;
+    display: flex;
   }
   @media (min-width: 580px) and (max-width: 830px) {
     width: 550px;
     // display: flex;
-    height: 100%;
+    display: flex;
   }
   @media (max-width: 580px) {
     width: 450px;
     display: flex;
-    height: 100%;
   }
   @media (max-width: 450px) {
     width: 350px;
     display: flex;
-    height: 100%;
   }
   @media (max-width: 400px) {
     width: 300px;
     display: flex;
-    height: 100%;
   }
   @media (max-width: 380px) {
     width: 280px;
     display: flex;
-    height: 100%;
   }
 `;
 
@@ -161,12 +158,17 @@ const VidCon = styled.div`
 
   position: relative;
   width: 65%;
-  height: 100%;
+  // height: 100%;
   margin: auto;
   object-fit: contain;
   & iframe {
     height: 300px;
+    @media (max-width: 1030px) {
+      height: 300px;
+      width: 400px;
+    }
     @media (min-width: 550px) and (max-width: 830px) {
+      height: 200px;
     }
     @media (max-width: 550px) {
       height: 200px;
@@ -190,8 +192,12 @@ const Info = styled.div`
   height: 70%;
 
   color: #d4d4d4;
+  @media (max-width: 930px) {
+    width: 200px;
+  }
   @media (min-width: 550px) and (max-width: 830px) {
     width: 100%;
+    // height: 100%;
     & h1 {
       font-size: 14px;
     }

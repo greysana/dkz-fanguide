@@ -240,14 +240,11 @@ const AboutDKZ = () => {
 const AboutCon = styled.div`
   background-color: #323232;
 
-  //margin-top: -3rem;
-  //height: 100%;
-  // overflow-y: scroll;
-
   height: 100vh;
   // width: 80vw;
   @media (max-width: 800px) {
     width: 100vw;
+    height: 100vh;
   }
   & .container {
     position: relative;
@@ -429,37 +426,4 @@ const SwiperCon = styled.div`
   }
 `;
 
-const Info = styled.div`
-  position: relative;
-
-  color: #fff;
-  & h1 {
-    margin: 0.5rem;
-    margin-top: 1.5rem;
-    font-size: 17px;
-    color: #fff;
-  }
-  & ul {
-    margin: auto;
-    margin-top: 10px;
-    margin-right: 10px;
-    text-decoration: none;
-    text-align: left;
-  }
-  & li {
-    text-decoration: none;
-    list-style: none;
-    & span {
-      font-size: 13px;
-      color: #dfdfdf;
-      margin-right: 10px;
-    }
-  }
-  & hr {
-    border: none;
-    height: 1px;
-    background-color: #ffffffa5;
-    margin-bottom: px;
-  }
-`;
 export default AboutDKZ;

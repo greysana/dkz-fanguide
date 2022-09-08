@@ -14,7 +14,8 @@ const AlbumCons = styled.div`
   position: relative;
   margin: auto;
   margin-top: 5rem;
-  //width: 100%;
+  // height: 100vh;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

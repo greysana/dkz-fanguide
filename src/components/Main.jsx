@@ -38,16 +38,12 @@ const MainCon = styled.div`
   position: relative;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  height: 100vh;
-  //width: 80vw;
   top: 0px;
-
   background-color: #323232;
   @media (max-width: 800px) {
-    width: 100vw;
+    //width: 100vw;
+    //overflow: hidden;
   }
-  // width: 85vw;
-  //overflow-y: scroll;
 `;
 
 export default Main;

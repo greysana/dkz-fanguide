@@ -142,7 +142,7 @@ const MemberCon = styled.div`
   position: relative;
   margin-top: 0px;
   height: 100vh;
-  //width: 80vw;
+  //width: 75vw;
   @media (max-width: 800px) {
     width: 100vw;
   }
@@ -165,18 +165,18 @@ const SwiperCon = styled.div`
   top: 2rem;
   z-index: 13;
   @media (max-width: 1000px) and (min-width: 750px) {
-    width: 650px;
+    width: 600px;
   }
   @media (min-width: 550px) and (max-width: 750px) {
-    width: 650px;
+    width: 600px;
     overflow: visible;
   }
   @media (max-width: 550px) {
-    width: 90vw;
+    width: 95vw;
     overflow: hidden;
   }
   @media (max-width: 380px) {
-    width: 90vw;
+    width: 95vw;
     overflow: hidden;
   }
   & img.slide {

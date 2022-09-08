@@ -80,13 +80,14 @@ const AlbumDetailsCon = styled.div`
   display: block;
   //width: 80vw;
   @media (max-width: 800px) {
-    width: 100vw;
+    //width: 100vw;
   }
   background-color: #323232;
-  //height: 100vh;
+  height: 100vh;
+
   & .containers {
     background-color: #323232;
-    height: 100%;
+    //height: 100%;
   }
   & .infoCon {
     position: relative;
@@ -113,7 +114,7 @@ const AlbumDetailsCon = styled.div`
     @media (max-width: 800px) {
       width: 90vw;
 
-      height: 100%;
+      //   height: 100%;
     }
     & .albumPic {
       background-color: #13131346;
@@ -147,7 +148,7 @@ const AlbumDetailsCon = styled.div`
       width: 90vw;
       display: flex;
       flex-wrap: wrap;
-      height: 100%;
+      //height: 100%;
     }
     & ul {
       list-style: none;
@@ -296,7 +297,7 @@ const AlbumDetailsCon = styled.div`
     @media (max-width: 800px) {
       width: 90vw;
 
-      height: 100%;
+      //  height: 100%;
     }
     & img {
       margin: auto;
@@ -313,7 +314,7 @@ const AlbumDetailsCon = styled.div`
 const Info = styled.div`
   position: relative;
 
-  height: 70%;
+  //height: 70%;
 
   color: #fff;
   & h1 {

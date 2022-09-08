@@ -75,7 +75,7 @@ const PhotoCard = () => {
 const AlbumCon = styled.div`
   display: flex;
   position: relative;
-  width: 90%;
+  //width: 90%;
   flex-wrap: wrap;
   margin: auto;
   z-index: 13;

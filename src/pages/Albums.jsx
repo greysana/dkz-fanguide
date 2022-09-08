@@ -20,10 +20,10 @@ const HomeCon = styled.div`
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  // width: 80vw;
+  //height: 100vh;
+  //width: 80vw;
   @media (max-width: 800px) {
-    width: 100vw;
+    //width: 100vw;
   }
 `;
 

@@ -33,9 +33,10 @@ const HomeCon = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  // width: 80vw;
+  width: 80vw;
   @media (max-width: 800px) {
     width: 100vw;
+    // height: 100%;
   }
   &.1 {
     animation: entrance 2s ease-in-out;

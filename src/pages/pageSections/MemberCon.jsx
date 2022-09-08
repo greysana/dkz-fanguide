@@ -52,7 +52,7 @@ const MemCon = styled.div`
   margin: auto;
   position: relative;
   display: block;
-  //width: 100%;
+  width: 100%;
   background-color: #323232;
   & h3 {
     position: relative;

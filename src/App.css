@@ -56,3 +56,6 @@
     transform: rotate(360deg);
   }
 }
+.progress-bar {
+  transform: none !important;
+}

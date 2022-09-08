@@ -54,7 +54,7 @@ const GalleryCons = styled.div`
   padding-bottom: 3rem;
   // width: 80vw;
   @media (max-width: 800px) {
-    width: 100vw;
+    //width: 100vw;
   }
   & h1 {
     position: relative;

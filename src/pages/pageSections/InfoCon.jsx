@@ -154,7 +154,7 @@ const InfoCons = styled.div`
   position: relative;
   // height: 100%;
   background-color: #323232;
-  // width: 100%;
+  width: 100%;
 
   & .infoCons {
     display: flex;

@@ -47,35 +47,42 @@ function App() {
 
 const Mains = styled.div`
   text-align: center;
-
+  background-color: #323232;
   display: grid;
   grid-template-columns: 0.2fr 1fr;
   grid-template-rows: 1fr;
-  grid-column-gap: 0px;
+  grid-column-gap: 0px 0px;
   grid-template-areas: "Sidebar Main";
   grid-row-gap: 0px;
   max-width: 2100px;
+  height: 100vh;
   margin: auto;
-  background-color: #fff;
+  //background-color: #fff;
   overflow-x: hidden;
   overflow-y: hidden;
+  overflow: hidden;
 
   @media (max-width: 800px) {
+    //display: block;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-template-areas: "Main";
-    //overflow: hidden;
-    // width: 100vw;
+    overflow: hidden;
+    width: 100vw;
     overflow-x: hidden;
     overflow-y: hidden;
-    // height: 100vh;
+    & .progress-bar {
+      transform: none !important;
+    }
+    //  height: 100vh;
   }
 `;
 const MainCon = styled.div`
   grid-area: Main;
-  overflow: hidden;
-  //height: 100vh;
+  //overflow: hidden;
+  height: 100vh;
+  background-color: #323232;
 
   @media (max-width: 800px) {
     width: 100vw;
@@ -100,17 +107,19 @@ const MainCon = styled.div`
       right: 1.5rem;
       top: 1rem;
       overflow: hidden;
-      //width: 100vw;
+      //  width: 100vw;
     }
   }
 `;
 const SidebarCon = styled.div`
   background-color: #292929;
   grid-area: Sidebar;
+  @media (max-width: 800px) {
+    visibility: hidden;
+  }
 `;
 
 const Sidebars = styled.div`
-  //width: 100%;
   height: 100vh;
   @media (max-width: 800px) {
     visibility: hidden;
