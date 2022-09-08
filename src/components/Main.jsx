@@ -41,8 +41,7 @@ const MainCon = styled.div`
   top: 0px;
   background-color: #323232;
   @media (max-width: 800px) {
-    //width: 100vw;
-    //overflow: hidden;
+    // height: 100vh;
   }
 `;
 

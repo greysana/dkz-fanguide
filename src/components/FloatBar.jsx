@@ -17,11 +17,22 @@ const FloatBar = ({ selected }) => {
 
   const _handleClick = (menuItem) => {
     setactive(menuItem);
-    selected(false);
+    navigate(`/${menuItem}`);
+    if (menuItem === "fan-community") {
+      selected(true);
+    } else {
+      selected(false);
+    }
   };
   const handleClick2 = (submenuItem) => {
     setactivesub(submenuItem);
     navigate(`/about/${submenuItem}`);
+
+    selected(false);
+  };
+  const handleClick3 = (menuItem) => {
+    setactivesub(menuItem);
+    navigate(`/fan-community/${menuItem}`);
     selected(false);
   };
   useEffect(() => {
@@ -38,6 +49,8 @@ const FloatBar = ({ selected }) => {
       setactive("albums");
     } else if (loc.includes("achievements")) {
       setactive("achievements");
+    } else if (loc.includes("fan-community")) {
+      setactive("fan-community");
     }
 
     if (loc.includes("intro")) {
@@ -46,8 +59,18 @@ const FloatBar = ({ selected }) => {
       setactivesub("timeline");
     } else if (loc.includes("gallery")) {
       setactivesub("gallery");
-    } else if (loc === "/about/") {
+    } else if (loc.includes("/about/")) {
       setactivesub("");
+    } else if (loc.includes("fan-arts")) {
+      setactivesub("fan-arts");
+    } else if (loc.includes("fan-site")) {
+      setactivesub("fan-site");
+    } else if (loc.includes("fan-editors")) {
+      setactivesub("fan-editors");
+    } else if (loc.includes("fan-translators")) {
+      setactivesub("fan-translators");
+    } else if (loc.includes("fan-art-gallery")) {
+      setactivesub("fan-art-gallery");
     }
   }, [location]);
   console.log(activesub);
@@ -67,6 +90,7 @@ const FloatBar = ({ selected }) => {
                 .
               </button>
               <MenuItem
+                className="link"
                 to="/latest/"
                 onClick={_handleClick.bind(this, "latest")}
               >
@@ -81,7 +105,11 @@ const FloatBar = ({ selected }) => {
             <li>
               <button className={active === "about" ? " active" : ""}>.</button>
 
-              <MenuItem to="/about/" onClick={_handleClick.bind(this, "about")}>
+              <MenuItem
+                className="link"
+                to="/about/"
+                onClick={_handleClick.bind(this, "about")}
+              >
                 <text className={active === "about" ? "menu active" : "menu"}>
                   <i>
                     <FaUsers />
@@ -147,6 +175,7 @@ const FloatBar = ({ selected }) => {
               </button>
 
               <MenuItem
+                className="link"
                 to="/members/Kyoungyoon 경윤/"
                 onClick={_handleClick.bind(this, "members")}
               >
@@ -162,6 +191,7 @@ const FloatBar = ({ selected }) => {
               <button className={active === "music" ? " active" : ""}>.</button>
 
               <MenuItem
+                className="link"
                 to="/music-videos/"
                 onClick={_handleClick.bind(this, "music")}
               >
@@ -179,6 +209,7 @@ const FloatBar = ({ selected }) => {
               </button>
 
               <MenuItem
+                className="link"
                 to="/albums/"
                 onClick={_handleClick.bind(this, "albums")}
               >
@@ -198,6 +229,7 @@ const FloatBar = ({ selected }) => {
               <MenuItem
                 to="/achievements/"
                 onClick={_handleClick.bind(this, "achievements")}
+                className="link"
               >
                 <text
                   className={active === "achievements" ? "menu active" : "menu"}
@@ -209,6 +241,118 @@ const FloatBar = ({ selected }) => {
                 </text>
               </MenuItem>
             </li>
+            <li>
+              <button className={active === "fan-community" ? " active" : ""}>
+                .
+              </button>
+
+              <MenuItem
+                to="/fan-community/"
+                onClick={_handleClick.bind(this, "fan-community")}
+                className="link"
+              >
+                <text
+                  className={
+                    active === "fan-community" ? "menu active" : "menu"
+                  }
+                >
+                  <i>
+                    <FaUsers />
+                  </i>
+                  <p>Fan Community</p>
+                </text>
+              </MenuItem>
+              {active === "fan-community" && (
+                <div className="subMenu fan">
+                  <ul>
+                    <li>
+                      <div
+                        className={
+                          activesub === "fan-site" ? "line active" : "line"
+                        }
+                      ></div>
+                      <button
+                        className={
+                          activesub === "fan-site" ? "text active" : "text"
+                        }
+                        onClick={handleClick3.bind(this, "fan-site")}
+                      >
+                        {" "}
+                        Fan Site
+                      </button>
+                    </li>
+                    <li>
+                      <div
+                        className={
+                          activesub === "fan-translator"
+                            ? "line active"
+                            : "line"
+                        }
+                      ></div>
+                      <button
+                        className={
+                          activesub === "fan-translator"
+                            ? "text active"
+                            : "text"
+                        }
+                        onClick={handleClick3.bind(this, "fan-translator")}
+                      >
+                        Fan Translator
+                      </button>
+                    </li>
+                    <li>
+                      <div
+                        className={
+                          activesub === "fan-editors" ? "line active" : "line"
+                        }
+                      ></div>
+                      <button
+                        className={
+                          activesub === "fan-editors" ? "text active" : "text"
+                        }
+                        onClick={handleClick3.bind(this, "fan-editors")}
+                      >
+                        Fan Editors
+                      </button>
+                    </li>
+                    <li>
+                      <div
+                        className={
+                          activesub === "fan-arts" ? "line active" : "line"
+                        }
+                      ></div>
+                      <button
+                        className={
+                          activesub === "fan-arts" ? "text active" : "text"
+                        }
+                        onClick={handleClick3.bind(this, "fan-arts")}
+                      >
+                        Fan Arts
+                      </button>
+                    </li>
+                    <li>
+                      <div
+                        className={
+                          activesub === "fan-art-gallery"
+                            ? "line active"
+                            : "line"
+                        }
+                      ></div>
+                      <button
+                        className={
+                          activesub === "fan-art-gallery"
+                            ? "text active"
+                            : "text"
+                        }
+                        onClick={handleClick3.bind(this, "fan-art-gallery")}
+                      >
+                        Fan Art Gallery
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </li>
           </ul>
         </Nav>
       </SidebarCon>
@@ -216,9 +360,19 @@ const FloatBar = ({ selected }) => {
   );
 };
 
-const SidebarWrap = styled.div``;
-
-const MenuItem = styled(Link)`
+const SidebarWrap = styled.div`
+  overflow: visible;
+`;
+const MenuItem = styled.button`
+  &.link {
+    background-color: transparent;
+    // padding: 10px 20px;
+    width: 80%;
+    margin: 0.5rem auto;
+    visibility: visible;
+    color: #d8cccc;
+    cursor: pointer;
+  }
   text-decoration: none;
   color: #d8cccc;
 `;
@@ -227,9 +381,9 @@ const Nav = styled.div`
   position: relative;
   border-left: 4px solid #0b0b0b;
   margin: auto;
-  margin-left: 3.5rem;
-  width: 100%;
-
+  margin-left: 3rem;
+  // width: 100%;
+  // padding-bottom: 1rem;
   & ul {
     list-style: none;
     text-align: left;
@@ -238,22 +392,27 @@ const Nav = styled.div`
     font-size: 14px;
     position: relative;
     left: -48.5px;
+    width: 250px;
   }
   & li {
-    margin: 1rem auto;
+    margin: 10px auto;
     cursor: pointer;
     & .subMenu {
       position: relative;
       margin: auto;
-      width: 200px;
+      // width: 200px;
       left: 68px;
       display: inline;
-      margin-top: 18px;
+      top: 10px;
+      &.fan {
+        top: 10px;
+        // width: 200px;
+      }
       & ul {
-        margin-top: 30px;
+        //top: 15px;
       }
       & li {
-        margin: 1rem auto;
+        // margin: 1rem auto;
         cursor: pointer;
 
         & .line {
@@ -271,13 +430,13 @@ const Nav = styled.div`
         }
         & button.text {
           position: relative;
-          padding: 10px;
+          padding: 3px;
           font-size: 0.8rem;
           background-color: transparent;
           width: 50%;
           border-radius: 15px;
           color: #e4e4e4;
-          height: 40px;
+          height: 30px;
 
           cursor: pointer;
 
@@ -286,12 +445,12 @@ const Nav = styled.div`
             font-weight: 600;
             font-size: 0.6rem;
             background-color: #191919a1;
-            padding: 3px;
+            padding: 1px;
             border-radius: 15px;
           }
           &:hover {
             background-color: #1818189f;
-            padding: 10px;
+            padding: 3px;
             border-radius: 15px;
           }
         }
@@ -333,8 +492,10 @@ const Nav = styled.div`
   & .menu {
     position: relative;
     display: inline-flex;
+    padding: 0px 10px;
+    //width: 80%;
     // margin-left: 12px;
-    padding: 10px 20px;
+    //padding: 5px 20px;
     &.active {
       -webkit-animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         both;
@@ -342,14 +503,14 @@ const Nav = styled.div`
       font-weight: bold;
       background-color: #be3360;
       color: #ededed;
-      padding: 10px 20px;
+      padding: 0px 20px;
       border-radius: 30px;
       transition: 0.2s ease-in-out;
     }
     &:hover {
       background-color: #1b1b1b;
       color: #ededed;
-      padding: 10px 20px;
+      padding: 0px 20px;
       border-radius: 30px;
       transition: 0.2s ease-in-out;
     }
@@ -362,7 +523,7 @@ const Nav = styled.div`
     top: 2px;
   }
 
-  /* @media (min-width: 800px) and (max-width: 1280px) {
+  @media (min-width: 800px) and (max-width: 1280px) {
     margin-left: 1rem;
     width: 100%;
     display: inline-block;
@@ -373,56 +534,57 @@ const Nav = styled.div`
       width: 100%;
     }
     & li {
-      margin: 1rem auto;
+      //  margin: 1rem auto;
 
       & .subMenu {
-        width: 200px;
-        left: 68px;
+        // width: 200px;
+        left: 58px;
 
-        margin-top: 18px;
+        // margin-top: 18px;
         & ul {
-          margin-top: 30px;
+          margin-top: 10px;
         }
         & li {
-          margin: 1rem auto;
+          margin: 0rem auto;
           cursor: pointer;
 
           & .line {
             width: 10px;
             height: 3px;
             position: relative;
-            left: -58px;
+            left: -48px;
             top: 0.65rem;
             background-color: #0a0a0a;
             &.active {
               background-color: #be3360;
               width: 15px;
-              left: -61px;
+              left: -51px;
             }
           }
           & button.text {
-            position: relative;
-            padding: 10px;
-            font-size: 0.8rem;
+            // position: relative;
+            //padding: 3px;
+            font-size: 0.6rem;
             background-color: transparent;
-            width: 50%;
+            //width: 50%;
             border-radius: 15px;
             color: #e4e4e4;
-            height: 40px;
+            // height: 40px;
 
             cursor: pointer;
 
             &.active {
               color: #bed542;
-              font-weight: 600;
-              font-size: 0.6rem;
+              font-weight: 300;
+              font-size: 0.55rem;
               background-color: #191919a1;
-              padding: 3px;
+              //padding: 5px;
               border-radius: 15px;
+              // padding: 0;
             }
             &:hover {
               background-color: #1818189f;
-              padding: 10px;
+              padding: 3px;
               border-radius: 15px;
             }
           }
@@ -464,7 +626,7 @@ const Nav = styled.div`
     & .menu {
       margin-left: 8px;
       font-size: 10px;
-      padding: 8px 10px;
+      padding: 0px 10px;
 
       &.active {
         -webkit-animation: slide-in-left 0.5s
@@ -473,14 +635,14 @@ const Nav = styled.div`
         font-weight: bold;
         background-color: #be3360;
         color: #ededed;
-        padding: 8px 15px;
+        padding: 0px 15px;
         border-radius: 25px;
         transition: 0.2s ease-in-out;
       }
       &:hover {
         background-color: #1b1b1b;
         color: #ededed;
-        padding: 8px 15px;
+        padding: 0px 15px;
         border-radius: 25px;
         transition: 0.2s ease-in-out;
       }
@@ -494,26 +656,28 @@ const Nav = styled.div`
     }
   }
   @media (min-width: 300px) and (max-width: 800px) {
-  } */
+  }
 `;
 
 const SidebarCon = styled.div`
   display: block;
   position: fixed;
   float: right;
-  z-index: 10;
+  z-index: 30;
   background-color: #292929;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  width: 18%;
-  z-index: 22;
+  //width: 18%;
+
   width: 250px;
 `;
 
 const Info = styled.div`
   color: #bed542;
-
+  & .heading {
+    margin-bottom: -20px;
+  }
   & h1 {
     position: relative;
     height: 10px;

@@ -75,17 +75,18 @@ const Mains = styled.div`
     & .progress-bar {
       transform: none !important;
     }
-    //  height: 100vh;
+    // height: 100vh;
   }
 `;
 const MainCon = styled.div`
   grid-area: Main;
   //overflow: hidden;
-  height: 100vh;
+  // height: 100vh;
   background-color: #323232;
 
   @media (max-width: 800px) {
     width: 100vw;
+    //height: 100vh;
   }
   & button.burger {
     visibility: hidden;
@@ -114,13 +115,15 @@ const MainCon = styled.div`
 const SidebarCon = styled.div`
   background-color: #292929;
   grid-area: Sidebar;
+
   @media (max-width: 800px) {
     visibility: hidden;
   }
 `;
 
 const Sidebars = styled.div`
-  height: 100vh;
+  // height: 100vh;
+
   @media (max-width: 800px) {
     visibility: hidden;
   }
