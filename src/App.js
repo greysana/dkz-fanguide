@@ -49,7 +49,7 @@ const Mains = styled.div`
   text-align: center;
 
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 0.2fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-template-areas: "Sidebar Main";
