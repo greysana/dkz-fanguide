@@ -23,6 +23,9 @@ const YtCon = styled.div`
   height: 100%;
 
   border-radius: 10px;
+  & iframe {
+    height: 300px;
+  }
 
   & h1 {
     position: relative;

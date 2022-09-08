@@ -101,7 +101,7 @@ const MainCon = styled.div`
     &:hover {
       color: #bed542;
     }
-    @media (min-width: 300px) and (max-width: 800px) {
+    @media (max-width: 800px) {
       visibility: visible;
       z-index: 30;
       right: 1.5rem;
