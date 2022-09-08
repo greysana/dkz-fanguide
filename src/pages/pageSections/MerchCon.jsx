@@ -15,7 +15,7 @@ const MerchCons = styled.div`
   position: relative;
   margin: auto;
   margin-top: 1rem;
-  width: 100%;
+  // width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

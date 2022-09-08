@@ -21,7 +21,7 @@ const InfoCons = styled.div`
   position: relative;
   height: 100%;
   background-color: #323232;
-  width: 100%;
+  // width: 100%;
   @media (max-width: 550px) {
     top: -5rem;
   }
