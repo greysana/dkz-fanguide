@@ -23,6 +23,13 @@ const FloatBar = ({ selected }) => {
     } else {
       selected(false);
     }
+    if (menuItem === "members") {
+      navigate(`/${menuItem}/Kyoungyoon 경윤/`);
+    } else if (menuItem === "fan-community") {
+      navigate(`/${menuItem}/fan-site`);
+    } else {
+      navigate(`/${menuItem}`);
+    }
   };
   const handleClick2 = (submenuItem) => {
     setactivesub(submenuItem);
@@ -43,8 +50,8 @@ const FloatBar = ({ selected }) => {
       setactive("about");
     } else if (loc.includes("members")) {
       setactive("members");
-    } else if (loc.includes("music")) {
-      setactive("music");
+    } else if (loc.includes("music-videos")) {
+      setactive("music-videos");
     } else if (loc.includes("albums")) {
       setactive("albums");
     } else if (loc.includes("achievements")) {
@@ -67,8 +74,8 @@ const FloatBar = ({ selected }) => {
       setactivesub("fan-site");
     } else if (loc.includes("fan-editors")) {
       setactivesub("fan-editors");
-    } else if (loc.includes("fan-translators")) {
-      setactivesub("fan-translators");
+    } else if (loc.includes("fan-translator")) {
+      setactivesub("fan-translator");
     } else if (loc.includes("fan-art-gallery")) {
       setactivesub("fan-art-gallery");
     }
@@ -188,14 +195,18 @@ const FloatBar = ({ selected }) => {
               </MenuItem>
             </li>
             <li>
-              <button className={active === "music" ? " active" : ""}>.</button>
+              <button className={active === "music-videos" ? " active" : ""}>
+                .
+              </button>
 
               <MenuItem
                 className="link"
                 to="/music-videos/"
-                onClick={_handleClick.bind(this, "music")}
+                onClick={_handleClick.bind(this, "music-videos")}
               >
-                <text className={active === "music" ? "menu active" : "menu"}>
+                <text
+                  className={active === "music-videos" ? "menu active" : "menu"}
+                >
                   <i>
                     <MdOndemandVideo />
                   </i>

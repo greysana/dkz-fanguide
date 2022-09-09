@@ -61,6 +61,7 @@ const Mains = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
   overflow: hidden;
+  top: 0px;
 
   @media (max-width: 800px) {
     //display: block;
@@ -83,7 +84,8 @@ const MainCon = styled.div`
   //overflow: hidden;
   // height: 100vh;
   background-color: #323232;
-
+  //position: relative;
+  top: 0px;
   @media (max-width: 800px) {
     width: 100vw;
     //height: 100vh;

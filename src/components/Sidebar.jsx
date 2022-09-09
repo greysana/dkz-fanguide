@@ -19,6 +19,8 @@ const Sidebar = () => {
     setactive(menuItem);
     if (menuItem === "members") {
       navigate(`/${menuItem}/Kyoungyoon 경윤/`);
+    } else if (menuItem === "fan-community") {
+      navigate(`/${menuItem}/fan-site`);
     } else {
       navigate(`/${menuItem}`);
     }
@@ -39,8 +41,8 @@ const Sidebar = () => {
       setactive("about");
     } else if (loc.includes("members")) {
       setactive("members");
-    } else if (loc.includes("music")) {
-      setactive("music");
+    } else if (loc.includes("music-videos")) {
+      setactive("music-videos");
     } else if (loc.includes("albums")) {
       setactive("albums");
     } else if (loc.includes("achievements")) {
@@ -182,14 +184,18 @@ const Sidebar = () => {
               </MenuItem>
             </li>
             <li>
-              <button className={active === "music" ? " active" : ""}>.</button>
+              <button className={active === "music-videos" ? " active" : ""}>
+                .
+              </button>
 
               <MenuItem
                 className="link"
                 to="/music-videos/"
-                onClick={_handleClick.bind(this, "music")}
+                onClick={_handleClick.bind(this, "music-videos")}
               >
-                <text className={active === "music" ? "menu active" : "menu"}>
+                <text
+                  className={active === "music-videos" ? "menu active" : "menu"}
+                >
                   <i>
                     <MdOndemandVideo />
                   </i>

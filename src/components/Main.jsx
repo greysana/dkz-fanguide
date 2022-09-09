@@ -10,6 +10,11 @@ import Chart from "../pages/Chart";
 import { motion, useScroll } from "framer-motion";
 import AlbumDetails from "../pages/AlbumDetails";
 import MainGallery from "../pages/MainGallery";
+import FanSite from "../pages/fan-community/FanSite";
+import FanTranslator from "../pages/fan-community/FanTranslator";
+import FanEditor from "../pages/fan-community/FanEditor";
+import FanArtist from "../pages/fan-community/FanArtist";
+import FanArtGallery from "../pages/fan-community/FanArtGallery";
 const Main = () => {
   const { scrollYProgress } = useScroll();
 
@@ -28,6 +33,17 @@ const Main = () => {
           <Route path="/albums/:name/details/" element={<AlbumDetails />} />
 
           <Route path="/achievements/" element={<Chart />} />
+          <Route path="/fan-community/fan-site" element={<FanSite />} />
+          <Route
+            path="/fan-community/fan-translator"
+            element={<FanTranslator />}
+          />
+          <Route path="/fan-community/fan-editors" element={<FanEditor />} />
+          <Route path="/fan-community/fan-arts" element={<FanArtist />} />
+          <Route
+            path="/fan-community/fan-art-gallery"
+            element={<FanArtGallery />}
+          />
         </Routes>
       </MainCon>
     </motion.div>
@@ -38,7 +54,8 @@ const MainCon = styled.div`
   position: relative;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  top: 0px;
+  top: 1rem;
+  padding-top: 1rem;
   background-color: #323232;
   @media (max-width: 800px) {
     // height: 100vh;
