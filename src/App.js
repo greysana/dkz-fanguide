@@ -3,12 +3,17 @@ import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
 import { BrowserRouter as Router } from "react-router-dom";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FloatBar from "./components/FloatBar";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 
 function App() {
+  useEffect(() => {
+    window.process = {
+      ...window.process,
+    };
+  }, []);
   const [click, setclick] = useState(false);
   return (
     <Mains>

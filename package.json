@@ -14,15 +14,17 @@
     "react-icons": "^4.4.0",
     "react-intersection-observer": "^9.4.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^5.0.0",
     "react-scroll-motion": "^0.3.0",
     "react-scroller": "^0.0.3",
     "react-tweet-embed": "^2.0.0",
+    "react-twitter-embed": "^4.0.4",
     "styled-components": "^5.3.5",
     "swiper": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "resolutions": {
+    "//": "See https://github.com/facebook/create-react-app/issues/11773",
     "react-error-overlay": "6.0.9"
   },
   "scripts": {

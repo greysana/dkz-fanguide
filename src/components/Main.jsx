@@ -33,7 +33,7 @@ const Main = () => {
           <Route path="/albums/:name/details/" element={<AlbumDetails />} />
 
           <Route path="/achievements/" element={<Chart />} />
-          <Route path="/fan-community/fan-site" element={<FanSite />} />
+          <Route path="/fan-community/fan-site/:mem" element={<FanSite />} />
           <Route
             path="/fan-community/fan-translator"
             element={<FanTranslator />}
