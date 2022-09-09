@@ -1,7 +1,7 @@
 import React from "react";
 
-const FanEditors = () => {
+const FanEditor = () => {
   return <div>fanEditor</div>;
 };
 
-export default FanEditors;
+export default FanEditor;
