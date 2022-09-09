@@ -26,7 +26,7 @@ const FloatBar = ({ selected }) => {
     if (menuItem === "members") {
       navigate(`/${menuItem}/Kyoungyoon 경윤/`);
     } else if (menuItem === "fan-community") {
-      navigate(`/${menuItem}/fan-site`);
+      navigate(`/${menuItem}/fan-site/dkz`);
     } else {
       navigate(`/${menuItem}`);
     }
