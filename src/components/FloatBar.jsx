@@ -372,7 +372,12 @@ const FloatBar = ({ selected }) => {
 };
 
 const SidebarWrap = styled.div`
-  overflow: visible;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
 `;
 const MenuItem = styled.button`
   &.link {
@@ -679,6 +684,12 @@ const SidebarCon = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
   //width: 18%;
 
   width: 250px;

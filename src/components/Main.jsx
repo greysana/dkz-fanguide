@@ -32,7 +32,7 @@ const Main = () => {
           <Route path="/albums/" element={<Albums />} />
           <Route path="/albums/:name/details/" element={<AlbumDetails />} />
 
-          <Route path="/achievements/" element={<Chart />} />
+          <Route path="/achievements" element={<Chart />} />
           <Route path="/fan-community/fan-site/:mem" element={<FanSite />} />
           <Route
             path="/fan-community/fan-translator"
@@ -57,6 +57,13 @@ const MainCon = styled.div`
   top: 1rem;
   padding-top: 1rem;
   background-color: #323232;
+  height: 100vh;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
   @media (max-width: 800px) {
     // height: 100vh;
   }

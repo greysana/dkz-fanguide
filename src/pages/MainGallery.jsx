@@ -48,7 +48,7 @@ const MainGallery = () => {
 const GalleryCons = styled.div`
   position: relative;
   margin: auto;
-  height: 100vh;
+  //height: 100vh;
   background-color: #323232;
   padding-top: 2rem;
   padding-bottom: 3rem;

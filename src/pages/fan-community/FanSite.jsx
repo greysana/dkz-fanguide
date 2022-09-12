@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import kyoungyoon from "../../Assets/Kyoungyoon.jpg";
 import sehyeon from "../../Assets/Sehyeon.jpg";
@@ -21,7 +21,11 @@ import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { AiOutlineTwitter } from "react-icons/ai";
+import {
+  AiOutlineLeft,
+  AiOutlineRight,
+  AiOutlineTwitter,
+} from "react-icons/ai";
 import { useLocation, useNavigate } from "react-router-dom";
 //import TweetEmbed from "react-tweet-embed";
 
@@ -41,10 +45,83 @@ const images = [
   },
 ];
 
+const fansite = [
+  {
+    id: 1,
+    accName: "Luna",
+    bio: "매일 행복할 순 없지만, 행복한 것들을 매일 있다 - 세현 🐰 You can't be happy every day, but there are happy things every day - Sehyeon 🐰",
+    accLink: "https://twitter.com/dhrxhrrl",
+    member: ["dkz", "mingyu", "munik", "jaechan", "jonghyeong", "giseok"],
+    lang: ["English"],
+    highlightTweets: [
+      {
+        tweetId: "1567918354622738432",
+      },
+      {
+        tweetId: "1567560336097804288",
+      },
+      {
+        tweetId: "1567756662727135232",
+      },
+    ],
+  },
+  {
+    id: 2,
+    accName: "jaechanism",
+    bio: "매일 행복할 순 없지만, 행복한 것들을 매일 있다 - 세현 🐰 You can't be happy every day, but there are happy things every day - Sehyeon 🐰",
+    accLink: "https://twitter.com/dhrxhrrl",
+    member: [
+      "sehyeon",
+      "kyoungyoon",
+      "dkz",
+      "mingyu",
+      "munik",
+      "jaechan",
+      "jonghyeong",
+      "giseok",
+    ],
+    lang: ["japanese"],
+    highlightTweets: [
+      {
+        tweetId: "1567918354622738432",
+      },
+      {
+        tweetId: "1567560336097804288",
+      },
+      {
+        tweetId: "1567756662727135232",
+      },
+    ],
+  },
+  {
+    id: 2,
+    accName: "dkzism",
+    bio: "매일 행복할 순 없지만, 행복한 것들을 매일 있다 - 세현 🐰 You can't be happy every day, but there are happy things every day - Sehyeon 🐰",
+    accLink: "https://twitter.com/dhrxhrrl",
+    member: ["sehyeon", "kyoungyoon", "dkz", "mingyu", "jonghyeong", "giseok"],
+    highlightTweets: [
+      {
+        tweetId: "1567918354622738432",
+      },
+      {
+        tweetId: "1567560336097804288",
+      },
+      {
+        tweetId: "1567756662727135232",
+      },
+    ],
+  },
+];
+
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs, Autoplay]);
 
 const FanSite = () => {
   const [active, setactive] = useState("dkz");
+  const [show, setshow] = useState(0);
+
+  const toGiseok = useRef(null);
+  const toDkz = useRef(null);
+
   const nav = useNavigate();
   const location = useLocation();
   useEffect(() => {
@@ -66,7 +143,17 @@ const FanSite = () => {
     } else if (loc.includes("giseok")) {
       setactive("giseok");
     }
+    setshow(0);
   }, [location]);
+
+  const handleChange = (e) => {
+    console.log(e);
+    e.preventDefault();
+  };
+
+  // const ehe = fansite.filter((o) => o.member.includes(active));
+  // console.log(active);
+  // console.log(ehe);
 
   return (
     <Con>
@@ -78,6 +165,7 @@ const FanSite = () => {
         <div className="memberCon">
           <ul>
             <li
+              ref={toDkz}
               className={active === "dkz" ? "active" : ""}
               onClick={() => {
                 setactive("dkz");
@@ -167,6 +255,7 @@ const FanSite = () => {
                 setactive("giseok");
                 nav("/fan-community/fan-site/giseok");
               }}
+              ref={toGiseok}
             >
               <div className={active === "giseok" ? "img active" : "img"}>
                 <img src={giseok} alt="" />
@@ -175,78 +264,161 @@ const FanSite = () => {
             </li>
           </ul>
         </div>
+        <button
+          className="left"
+          onClick={() => {
+            toDkz.current.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <AiOutlineLeft />
+        </button>
+        <button
+          className="right"
+          onClick={() => {
+            toGiseok.current.scrollIntoView({ behavior: "smooth" });
+          }}
+          sc
+        >
+          <AiOutlineRight />
+        </button>
       </div>
       <div className="mainCon">
-        <div className="content">
-          <div className="heading">
-            <h1>Account Name: </h1> <p>Luna</p>
-          </div>
-
-          <h2>Bio:</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-            aperiam sunt voluptatum animi quis, voluptatibus explicabo
-            voluptatem officia id facilis laboriosam dolore magnam
-            necessitatibus velit. Suscipit dolore exercitationem magnam non?
-          </p>
-          <div className="acc">
-            <p>Visit account:</p>
-            <button>
-              <a href="">
-                <AiOutlineTwitter />
-              </a>
-            </button>
-          </div>
-          <h3>example tweets/posts</h3>
-          <div className="body">
-            <SwiperCon>
-              <Swiper
-                //style={{ margin: "20px" }}
-                //modules={[Navigation, Pagination, Controller, Thumbs]}
-                navigation
-                pagination
-                spaceBetween={5}
-                // centeredSlides={true}
-                initialSlide={0}
-                slidesPerView={1}
-                autoplay={{
-                  delay: 3000,
-                  pauseOnMouseEnter: true,
-                  disableOnInteraction: false,
-                }}
-                //loop={true}
-                onInit={(swiper) => console.log("Swiper initialized!", swiper)}
-                // onSlideChange={(swiper) => {
-                //   // console.log("Slide index changed to: ", swiper.activeIndex);
-                //   setactive(swiper.activeIndex);
-                // }}
-                // onReachEnd={() => console.log("Swiper end reached")}
-              >
-                {images?.map((mem, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="slide">
-                      <TwitterTweetEmbed
-                        tweetId="1567918354622738432"
-                        options={{
-                          width: "100%",
-                          height: "100%",
-                          //theme: "dark",
-                        }}
-                        placeholder="Loading"
-
-                        // placeholder={"loading"}
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </SwiperCon>
-          </div>
+        <h1 className="head">Fan Sites</h1>
+        <p className="head">
+          {" "}
+          lorem 매일 행복할 순 없지만, 행복한 것들을 매일 있다 - 세현 🐰 You
+          can't be happy every day, but there are happy things every day -
+          Sehyeon 🐰
+        </p>
+        <hr />
+        <div className="option">
+          <h1>Language:</h1>
+          <select id="" onChange={(e) => handleChange(e)}>
+            <option value="english">English</option>
+            <option value="japanese">Japanese</option>
+          </select>
         </div>
+        {fansite
+          ?.filter((o) => o.member.includes(active))
+          .map((mem, index) => (
+            <div className="content" key={index}>
+              <div className="heading">
+                <h1>Account Name: </h1> <p>{mem.accName}</p>
+              </div>
+              <div className="top">
+                <h2>Bio:</h2>
+                <p>{mem.bio}</p>
+                <div className="lang">
+                  <h2>Language:</h2>
+                  <p>English</p>
+                </div>
+              </div>
+              <div className="acc">
+                <p>Visit account:</p>
+                <button>
+                  <a href={mem.accLink}>
+                    <AiOutlineTwitter />
+                  </a>
+                </button>
+              </div>
+              <hr />
+              {index === show ? (
+                <h3>Highlight Tweets/Posts</h3>
+              ) : (
+                <h3 className="button" onClick={() => setshow(index)}>
+                  {" "}
+                  Show Higlight Tweets/Posts
+                </h3>
+              )}
+              <div className={index === show ? "body active" : "body"}>
+                <SwiperCon>
+                  <Swiper
+                    //style={{ margin: "20px" }}
+                    //modules={[Navigation, Pagination, Controller, Thumbs]}
+                    navigation
+                    pagination
+                    spaceBetween={5}
+                    // centeredSlides={true}
+                    initialSlide={0}
+                    slidesPerView={1}
+                    autoplay={{
+                      delay: 3000,
+                      pauseOnMouseEnter: true,
+                      disableOnInteraction: false,
+                    }}
+                    //loop={true}
+                    onInit={(swiper) =>
+                      console.log("Swiper initialized!", swiper)
+                    }
+                    // onSlideChange={(swiper) => {
+                    //   // console.log("Slide index changed to: ", swiper.activeIndex);
+                    //   setactive(swiper.activeIndex);
+                    // }}
+                    // onReachEnd={() => console.log("Swiper end reached")}
+                  >
+                    {mem?.highlightTweets?.map((mems, i) => (
+                      <SwiperSlide key={i}>
+                        <div className="slide">
+                          {index === show && (
+                            <TwitterTweetEmbed
+                              tweetId={mems.tweetId}
+                              options={{
+                                width: "100%",
+                                height: "100%",
+                                //theme: "dark",
+                              }}
+                              placeholder={<Load />}
+
+                              // placeholder={"loading"}
+                            />
+                          )}
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </SwiperCon>
+              </div>
+            </div>
+          ))}
       </div>
     </Con>
   );
 };
+const Load = styled.div`
+  position: relative;
+  background-color: #2f2f2f57;
+  margin: auto;
+  width: 300px;
+  border-radius: 15px;
+  height: 500px;
+  animation: fade-in 0.8s normal 0s infinite alternate-reverse none;
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  //height: 400px;
+  @media (max-width: 1000px) and (min-width: 750px) {
+    // height: 400px;
+    width: 280px;
+  }
+  @media (min-width: 550px) and (max-width: 750px) {
+    width: 250px;
+  }
+  @media (max-width: 550px) {
+    width: 60vw;
+
+    // object-fit: contain;
+  }
+  @media (max-width: 390px) {
+    width: 80vw;
+
+    // object-fit: contain;
+  }
+`;
 const Con = styled.div`
   color: #1a1717;
   position: relative;
@@ -270,11 +442,42 @@ const Con = styled.div`
     z-index: 15;
     padding: 1rem;
     left: 0rem;
+    & button {
+      visibility: hidden;
+      cursor: pointer;
+    }
+    @media (max-width: 650px) {
+      & button {
+        visibility: visible;
+        background-color: transparent;
+        border: none;
+        font-size: 30px;
+        color: #ffffff81;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        &.left {
+          position: absolute;
+          top: 45%;
+          left: 0rem;
+        }
+        &.right {
+          position: absolute;
+          top: 45%;
+          right: 0rem;
+        }
+      }
+    }
     & .memberCon {
       position: relative;
 
       //height: 30px;
+      overflow-x: auto;
       width: 100%;
+      &::-webkit-scrollbar {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+      }
+
       & ul {
         list-style: none;
         font-size: 14px;
@@ -337,6 +540,57 @@ const Con = styled.div`
     z-index: 15;
     padding: 1rem;
     left: 0rem;
+    color: #fff;
+    & h1.head {
+      width: 90%;
+      margin: auto;
+      text-align: left;
+      font-size: 17px;
+      margin-bottom: 1rem;
+      text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+    & p.head {
+      font-size: 12px;
+      width: 90%;
+      margin: auto;
+      //width: 80%;
+    }
+    & hr {
+      margin-top: 1.5rem;
+      width: 90%;
+    }
+    & .option {
+      display: inline-flex;
+      //height: 20px;
+      & h1 {
+        font-size: 12px;
+        margin-right: 1rem;
+      }
+      & select {
+        background-color: #5f5f5f8f;
+        padding: 0px 15px;
+        border-radius: 10px;
+        color: #fff;
+        border: 1px solid #ffff;
+        cursor: pointer;
+
+        &:focus {
+          border: none;
+        }
+        &:checked {
+          border: none;
+        }
+        & option {
+          cursor: pointer;
+          background-color: #1f1f1f95;
+          padding: 5px;
+          &:active {
+            background-color: #5e5e5e94;
+          }
+          // margin: 10px;
+        }
+      }
+    }
     @media (max-width: 1000px) and (min-width: 750px) {
       width: 90%;
     }
@@ -346,6 +600,10 @@ const Con = styled.div`
     @media (max-width: 550px) {
       width: 90%;
     }
+    @media (max-width: 300px) {
+      padding: 0px;
+      width: 100%;
+    }
     & .content {
       background-color: #91919122;
       // display: flexbox;
@@ -353,6 +611,7 @@ const Con = styled.div`
       border: 1px solid #ffffff6e;
       flex-wrap: wrap;
       margin: 1rem auto;
+
       // height: 500px;
       position: relative;
       width: 90%;
@@ -361,6 +620,13 @@ const Con = styled.div`
       z-index: 15;
       padding: 1rem;
       left: 0rem;
+      & hr {
+        width: 80%;
+      }
+      @media (max-width: 300px) {
+        // margin: 0px;
+        // object-fit: contain;
+      }
       & .acc {
         display: inline-flex;
         & button {
@@ -375,12 +641,17 @@ const Con = styled.div`
           border: none;
           width: 50px;
           font-size: 30px;
+          cursor: pointer;
           & a {
             color: #fff;
             position: relative;
             top: 3px;
             margin: auto;
             //font-size: 15px;
+          }
+          &:hover {
+            transform: scale(0.9);
+            background-color: #009fde;
           }
         }
       }
@@ -389,9 +660,11 @@ const Con = styled.div`
         color: #fff;
         display: inline-flex;
         height: 30px;
+        // width: 40%;
         & h1 {
           font-size: 13px;
           color: #e4ecb4;
+          text-transform: capitalize;
         }
         & p {
           position: relative;
@@ -399,18 +672,51 @@ const Con = styled.div`
           top: -11px;
           font-size: 17px;
           font-weight: bold;
+          text-transform: capitalize;
         }
       }
-      & h2 {
-        text-align: left;
-        font-size: 13px;
-      }
-      & p {
-        font-size: 12px;
+      & .top {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 2rem;
+        & h2 {
+          text-align: left;
+          font-size: 13px;
+        }
+        & p {
+          font-size: 12px;
+          //width: 80%;
+        }
+        & .lang {
+          display: inline-flex;
+          text-align: left;
+          width: 100%;
+          & p {
+            margin-left: 10px;
+          }
+        }
       }
       & h3 {
         text-align: left;
         font-size: 13px;
+        width: 80%;
+        margin: auto;
+        &.button {
+          cursor: pointer;
+          text-align: center;
+          color: #bed542;
+          &:hover {
+            color: #9fb42d;
+          }
+        }
+      }
+      & .body {
+        visibility: hidden;
+        height: 10px;
+        &.active {
+          visibility: visible;
+          height: 650px;
+        }
       }
     }
   }
@@ -426,7 +732,7 @@ const SwiperCon = styled.div`
   align-self: center;
   top: 2rem;
   z-index: 13;
-  @media (max-width: 1000px) and (min-width: 750px) {
+  @media (max-width: 1100px) and (min-width: 750px) {
     width: 500px;
   }
   @media (min-width: 550px) and (max-width: 750px) {
@@ -435,10 +741,23 @@ const SwiperCon = styled.div`
   @media (max-width: 550px) {
     width: 100%;
   }
+  @media (max-width: 350px) {
+    width: 80vw;
+
+    // object-fit: contain;
+  }
+  @media (max-width: 300px) {
+    width: 90vw;
+
+    // object-fit: contain;
+  }
+
   & div.slide {
     position: relative;
+
     margin: auto;
-    width: 45%;
+    width: 55%;
+
     //height: 400px;
     @media (max-width: 1000px) and (min-width: 750px) {
       // height: 400px;
@@ -452,8 +771,18 @@ const SwiperCon = styled.div`
 
       // object-fit: contain;
     }
-    @media (max-width: 390px) {
+    @media (max-width: 420px) {
       width: 100%;
+      overflow: hidden;
+
+      // object-fit: contain;
+    }
+    @media (max-width: 350px) {
+      width: 100%;
+      position: relative;
+      margin: auto;
+      //left: -1rem;
+      overflow: hidden;
 
       // object-fit: contain;
     }

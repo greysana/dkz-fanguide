@@ -143,6 +143,12 @@ const MemberCon = styled.div`
   margin-top: 0px;
   height: 100vh;
   //width: 75vw;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
   @media (max-width: 800px) {
     width: 100vw;
   }

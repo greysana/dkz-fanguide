@@ -60,6 +60,10 @@ const MemCon = styled.div`
     font-size: 1.3rem;
     /* /margin-top: 2rem; */
     left: 10rem;
+    @media (max-width: 350px) {
+      left: 1rem;
+      font-size: 1rem;
+    }
     padding-top: 2rem;
     text-align: left;
     color: #ffffff96;
@@ -127,12 +131,21 @@ const MemberCons = styled.div`
       width: 150px;
       height: 200px;
     }
+    @media (max-width: 350px) {
+      width: 100px;
+      height: 150px;
+    }
 
     & h2 {
       font-size: 1rem;
       font-weight: 400;
       margin: 0.4rem;
       color: #585858;
+      @media (max-width: 350px) {
+        position: relative;
+        font-size: 10px;
+        top: -10px;
+      }
     }
   }
   & .cards {
@@ -153,12 +166,21 @@ const MemberCons = styled.div`
       width: 150px;
       height: 200px;
     }
+    @media (max-width: 350px) {
+      width: 100px;
+      height: 150px;
+    }
 
     & h2 {
       font-size: 1rem;
       font-weight: 400;
       margin: 0.4rem;
       color: #585858;
+      @media (max-width: 350px) {
+        position: relative;
+        font-size: 10px;
+        top: -10px;
+      }
     }
   }
   & .info {
@@ -168,10 +190,16 @@ const MemberCons = styled.div`
       margin-left: 0rem;
       margin: 1rem auto;
     }
+    @media (max-width: 350px) {
+      margin: 0.2rem auto;
+    }
     & h1 {
       font-size: 1rem;
       margin: 0.5rem;
       color: #dcdcdcdc;
+      @media (max-width: 350px) {
+        font-size: 10px;
+      }
     }
   }
   & .empty {
@@ -198,6 +226,10 @@ const MemberCons = styled.div`
     @media (max-width: 500px) {
       width: 150px;
       height: 160px;
+    }
+    @media (max-width: 350px) {
+      width: 100px;
+      height: 130px;
     }
   }
 

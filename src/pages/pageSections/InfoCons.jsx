@@ -77,12 +77,26 @@ const InfoCon = styled.div`
     margin: auto;
     width: 80%;
     z-index: 13;
+    padding: 1rem;
+
+    @media (max-width: 500px) {
+      width: 95vw;
+      padding: 13px;
+    }
+    @media (max-width: 290px) {
+      font-size: 1rem;
+      padding: 10px;
+    }
 
     & .body {
       border-left: 2px solid #fff;
       position: relative;
       margin: auto;
       width: 80%;
+      @media (max-width: 500px) {
+        width: 90vw;
+      }
+
       & .line {
         position: relative;
         border-left: 2px solid #fff;
@@ -96,6 +110,9 @@ const InfoCon = styled.div`
         left: -47.5px;
         color: #ffffff96;
         top: 1rem;
+        @media (max-width: 500px) {
+          left: -47px;
+        }
 
         & li {
           text-align: left;
@@ -103,6 +120,9 @@ const InfoCon = styled.div`
           & .content {
             position: relative;
             margin-left: 47.5px;
+            @media (max-width: 500px) {
+              margin-left: 20px;
+            }
           }
           & span {
             & .desc {
@@ -116,12 +136,23 @@ const InfoCon = styled.div`
               margin-left: 270px;
               text-align: left;
               top: -30px;
+              @media (max-width: 500px) {
+                margin-left: 100px;
+              }
+              @media (max-width: 300px) {
+                margin-left: 70px;
+                font-size: 0.6rem;
+              }
               &.active {
                 background-color: transparent;
                 position: relative;
                 font-weight: 600;
                 color: #fff;
                 font-size: 0.7rem;
+                @media (max-width: 300px) {
+                  margin-left: 70px;
+                  font-size: 0.5rem;
+                }
               }
             }
           }
@@ -136,6 +167,10 @@ const InfoCon = styled.div`
             z-index: 10;
             border: none;
             color: transparent;
+            @media (max-width: 500px) {
+              height: 10px;
+              width: 8px;
+            }
             &.active {
               background-color: #bad46b;
               color: transparent;

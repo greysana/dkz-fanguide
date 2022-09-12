@@ -47,6 +47,7 @@ const GalleryCons = styled.div`
   margin-top: 2rem;
   background-color: #323232;
   padding-bottom: 3rem;
+  height: 100vh;
   & h1 {
     position: relative;
     z-index: 13;
@@ -91,6 +92,18 @@ const GalleryCons = styled.div`
           width: 120px;
           height: 120px;
         }
+        @media (max-width: 350px) {
+          width: 90px;
+          height: 90px;
+        }
+        @media (max-width: 305px) {
+          width: 80px;
+          height: 80px;
+        }
+        @media (max-width: 275px) {
+          width: 70px;
+          height: 70px;
+        }
         &.gallery.last {
           filter: brightness(0.3);
           &:hover {
@@ -111,6 +124,14 @@ const GalleryCons = styled.div`
           top: -135px;
           color: #fff;
           cursor: pointer;
+          @media (max-width: 1200px) {
+            top: -110px;
+            font-size: 15px;
+          }
+          @media (max-width: 350px) {
+            top: -70px;
+            font-size: 13px;
+          }
         }
       }
     }

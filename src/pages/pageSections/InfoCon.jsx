@@ -27,18 +27,18 @@ const InfoCon = () => {
       <div className="infoCons">
         <div className="infocon">
           <p>
-            <b>DKZ (디케이지)</b>, formerly known as <b>DONGKIZ (동키즈)</b>, is
+            <b>DKZ (디케이지)</b>, formerly known as <b>DONGKIZ (동키즈)</b>, is
             a South Korean boy group under Dongyo Entertainment. The group is
             consist of 7 members:{" "}
             <b>
               {" "}
-              Kyoungyoon, Munik, Jaechan, Jonghyeong, Giseok, Mingyu, & Sehyeon
+              Kyoungyoon, Munik, Jaechan, Jonghyeong, Giseok, Mingyu, & Sehyeon
             </b>
             . <br /> <br />
             The member Munik is currently inactive/ on hiatus due to he is
             currently recovering from a health issue. <br /> <br /> The former
-            member and leader Wondae left the group on March 18, 2022. <br />{" "}
-            <br /> They changed their group name from DONGKIZ to DKZ on March
+            member and leader Wondae left the group on March 18, 2022. <br />{" "}
+            <br /> They changed their group name from DONGKIZ to DKZ on March
             28, 2022.
             <br /> <br />
             DKZ released their pre-debut single on November 21, 2018 and
@@ -173,6 +173,7 @@ const InfoCons = styled.div`
       position: relative;
       width: 100%;
       z-index: 15;
+      padding: 10px;
       & p {
         color: #ffffff;
         text-align: left;
@@ -189,9 +190,17 @@ const InfoCons = styled.div`
       border: 1px solid #ffffff6e;
       //flex-wrap: wrap;
       margin: 1rem auto;
+      padding: 0.5rem;
       height: 425px;
       position: relative;
       z-index: 15;
+      @media (max-width: 320px) {
+        position: relative;
+        height: 500px;
+      }
+      @media (max-width: 230px) {
+        height: 400px;
+      }
       & ul {
         // position: relative;
         display: block;
@@ -199,6 +208,11 @@ const InfoCons = styled.div`
         color: #fff;
         width: 80%;
         // margin: auto;
+        @media (max-width: 320px) {
+          position: relative;
+          width: 90%;
+          left: -2rem;
+        }
         & li {
           position: relative;
 
@@ -207,6 +221,9 @@ const InfoCons = styled.div`
           width: 100%;
           display: flex;
           & p {
+            @media (max-width: 230px) {
+              font-size: 13px;
+            }
             &.la {
               color: #ececec;
               text-align: left;
@@ -229,6 +246,10 @@ const InfoCons = styled.div`
                 background-color: #be3360;
                 margin: auto;
                 border-radius: 5px;
+                @media (max-width: 230px) {
+                  height: 30px;
+                  width: 30px;
+                }
               }
               & .l424xgc {
                 height: 40px;
@@ -236,6 +257,10 @@ const InfoCons = styled.div`
                 background-color: #6a6c6a;
                 margin: auto;
                 border-radius: 5px;
+                @media (max-width: 230px) {
+                  height: 30px;
+                  width: 30px;
+                }
               }
               & .limepunch {
                 height: 40px;
@@ -243,6 +268,10 @@ const InfoCons = styled.div`
                 background-color: #bed542;
                 margin: auto;
                 border-radius: 5px;
+                @media (max-width: 230px) {
+                  height: 30px;
+                  width: 30px;
+                }
               }
               & img {
                 height: 40px;
@@ -250,6 +279,10 @@ const InfoCons = styled.div`
                 background-color: #bed542;
                 margin: auto;
                 border-radius: 5px;
+                @media (max-width: 230px) {
+                  height: 30px;
+                  width: 30px;
+                }
               }
             }
           }
@@ -266,17 +299,29 @@ const InfoCons = styled.div`
       height: 350px;
       position: relative;
       z-index: 15;
+      @media (max-width: 290px) {
+        width: 200px;
+        height: 200px;
+      }
       & img {
         height: 250px;
         width: 250px;
         margin: 1rem auto;
         margin-bottom: 0.2rem;
+
+        @media (max-width: 290px) {
+          width: 130px;
+          height: 130px;
+        }
       }
       & h1 {
         font-size: 1.5rem;
         font-weight: 600;
         color: #eeeeee;
         text-shadow: 0px 4px 2px rgba(44, 44, 44, 0.5);
+        @media (max-width: 290px) {
+          font-size: 1rem;
+        }
       }
       //  margin: auto;
     }
@@ -287,6 +332,7 @@ const InfoCons = styled.div`
       border: 1px solid #ffffff6e;
       //flex-wrap: wrap;
       margin: 1rem auto;
+      padding: 0.5rem;
       // height: 400px;
       position: relative;
       z-index: 15;
@@ -301,13 +347,16 @@ const InfoCons = styled.div`
         list-style: none;
         font-size: 1.6rem;
         color: #fff;
-        width: 60%;
+        // width: 60%;
         margin: auto;
         display: flexbox;
         flex-wrap: wrap;
         & li {
           margin: 0.5rem 1.3rem;
           cursor: pointer;
+          @media (max-width: 290px) {
+            margin: 0.3rem 0.4rem;
+          }
           & .yt {
             text-align: center;
             margin: auto;

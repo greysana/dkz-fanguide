@@ -240,11 +240,12 @@ const AboutDKZ = () => {
 const AboutCon = styled.div`
   background-color: #323232;
 
-  height: 100vh;
+  //height: 100vh;
   // width: 80vw;
+
   @media (max-width: 800px) {
     width: 100vw;
-    height: 100vh;
+    // height: 100vh;
   }
   & .container {
     position: relative;

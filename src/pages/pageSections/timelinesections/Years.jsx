@@ -17,5 +17,9 @@ const Con = styled.div`
   width: 100%;
   height: 500px;
   z-index: 13;
+  @media (max-width: 500px) {
+    width: 90%;
+    //  margin-right: 10px;
+  }
 `;
 export default Years;

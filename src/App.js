@@ -122,7 +122,12 @@ const MainCon = styled.div`
 const SidebarCon = styled.div`
   background-color: #292929;
   grid-area: Sidebar;
-
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
   @media (max-width: 800px) {
     visibility: hidden;
   }
@@ -140,6 +145,12 @@ const Float = styled.div`
   visibility: hidden;
   height: 0px;
   width: 0px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
   @media (max-width: 800px) {
     visibility: visible;
     height: 100vh;
