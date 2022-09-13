@@ -31,7 +31,11 @@ const Sidebar = () => {
   };
   const handleClick3 = (menuItem) => {
     setactivesub(menuItem);
-    navigate(`/fan-community/${menuItem}`);
+    if (menuItem === "fan-site") {
+      navigate(`/fan-community/${menuItem}/dkz`);
+    } else {
+      navigate(`/fan-community/${menuItem}`);
+    }
   };
   useEffect(() => {
     const loc = location.pathname;
@@ -47,6 +51,8 @@ const Sidebar = () => {
       setactive("albums");
     } else if (loc.includes("achievements")) {
       setactive("achievements");
+    } else if (loc.includes("fan-community")) {
+      setactive("fan-community");
     }
 
     if (loc.includes("intro")) {
@@ -381,6 +387,8 @@ const Nav = styled.div`
   border-left: 4px solid #0b0b0b;
   margin: auto;
   margin-left: 3rem;
+  margin-right: 1rem;
+
   //width: 100%;
   // padding-bottom: 1rem;
   & ul {
@@ -637,6 +645,7 @@ const Nav = styled.div`
         padding: 0px 15px;
         border-radius: 25px;
         transition: 0.2s ease-in-out;
+        margin-right: 1rem;
       }
       &:hover {
         background-color: #1b1b1b;
@@ -665,6 +674,7 @@ const SidebarCon = styled.div`
   z-index: 20;
   background-color: #292929;
   height: 100vh;
+  /* /margin-right: 1rem; */
   justify-content: center;
   align-items: center;
 `;

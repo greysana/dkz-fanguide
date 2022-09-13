@@ -43,16 +43,18 @@ const ImagePopUp = ({ selected, index }) => {
                 <img
                   src={mem?.link}
                   alt={mem?.alt}
+                  onClick="disable"
                   style={{
                     position: "relative",
-                    width: active === index ? "100%" : "210px",
-                    height: active === index ? "100vh" : "270px",
+                    width: active === index ? "100%" : "100%",
+                    height: active === index ? "100vh" : "100vh",
                     borderRadius: "15px",
-
+                    // marginTop: "50%",
                     boxShadow: "0px 0px 2px 2px rgba(0, 0, 0, 0.3)",
                     objectFit: "contain",
                     backgroundColor: "#08080896",
-                    top: active === index ? "0rem" : "2rem",
+                    // top: active === index ? "0rem" : "2rem",
+                    zIndex: "30",
                     filter:
                       active === index ? "brightness(1)" : "brightness(0.30)",
                     //top: active === index ? "-10px" : "0px",
@@ -88,11 +90,13 @@ const PopUpCon = styled.div`
     width: 100vw;
   }
   & .imgPopCon {
-    margin: 2rem;
+    //margin: 2rem;
     z-index: 22;
     & span {
-      position: relative;
-      float: right;
+      position: absolute;
+      //float: right;
+      top: 2rem;
+      right: 0;
       color: #c7c7c7;
       font-size: 2rem;
       object-fit: contain;
@@ -119,7 +123,9 @@ const SwiperCon = styled.div`
   font-family: sans-serif;
   text-align: center;
   margin-top: 0;
-  width: 90vw;
+  //height: 100vh;
+
+  width: 100vw;
   margin: auto;
   justify-content: center;
   align-self: center;
@@ -136,6 +142,10 @@ const SwiperCon = styled.div`
     width: 30px;
     padding: 10px;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.4);
+    @media (max-width: 700px) {
+      width: 10px;
+      height: 10px;
+    }
   }
   .swiper-pagination {
     position: relative;

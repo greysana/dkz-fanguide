@@ -39,7 +39,12 @@ const FloatBar = ({ selected }) => {
   };
   const handleClick3 = (menuItem) => {
     setactivesub(menuItem);
-    navigate(`/fan-community/${menuItem}`);
+    if (menuItem === "fan-site") {
+      navigate(`/fan-community/${menuItem}/dkz`);
+    } else {
+      navigate(`/fan-community/${menuItem}`);
+    }
+
     selected(false);
   };
   useEffect(() => {
@@ -379,6 +384,7 @@ const SidebarWrap = styled.div`
     height: 0px;
   }
 `;
+
 const MenuItem = styled.button`
   &.link {
     background-color: transparent;

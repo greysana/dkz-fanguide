@@ -93,6 +93,9 @@ const InfoCon = styled.div`
       position: relative;
       margin: auto;
       width: 80%;
+      @media (max-width: 700px) {
+        width: 75vw;
+      }
       @media (max-width: 500px) {
         width: 90vw;
       }
@@ -120,6 +123,9 @@ const InfoCon = styled.div`
           & .content {
             position: relative;
             margin-left: 47.5px;
+            @media (max-width: 750px) {
+              margin-left: 30px;
+            }
             @media (max-width: 500px) {
               margin-left: 20px;
             }
@@ -133,9 +139,13 @@ const InfoCon = styled.div`
               font-size: 0.9rem;
               color: #eaeaea;
               padding: 1rem;
-              margin-left: 270px;
+              margin-left: 200px;
               text-align: left;
               top: -30px;
+              @media (max-width: 850px) {
+                margin-left: 150px;
+                // height: 300px;
+              }
               @media (max-width: 500px) {
                 margin-left: 100px;
               }

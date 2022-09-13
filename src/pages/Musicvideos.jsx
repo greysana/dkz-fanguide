@@ -174,6 +174,10 @@ const VidCon = styled.div`
       height: 200px;
       // height: 300px;
     }
+    @media (max-width: 450px) {
+      height: 200px;
+      width: 100%;
+    }
   }
   @media (min-width: 550px) and (max-width: 830px) {
     width: 100%;

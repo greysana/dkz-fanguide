@@ -30,6 +30,10 @@ function App() {
         </SidebarCon>
 
         <MainCon>
+          <Shadow
+            className={click ? "active" : ""}
+            onClick={() => setclick(false)}
+          ></Shadow>
           <button
             className="burger"
             onClick={() => {
@@ -123,6 +127,7 @@ const SidebarCon = styled.div`
   background-color: #292929;
   grid-area: Sidebar;
   overflow-y: auto;
+  //padding-right: 1rem;
   &::-webkit-scrollbar {
     visibility: hidden;
     width: 0px;
@@ -140,12 +145,23 @@ const Sidebars = styled.div`
     visibility: hidden;
   }
 `;
-
+const Shadow = styled.div`
+  visibility: hidden;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 25;
+  &.active {
+    visibility: visible;
+  }
+`;
 const Float = styled.div`
   visibility: hidden;
   height: 0px;
   width: 0px;
   overflow-y: auto;
+  //padding-right: 1rem;
   &::-webkit-scrollbar {
     visibility: hidden;
     width: 0px;

@@ -291,13 +291,13 @@ const FanSite = () => {
           Sehyeon 🐰
         </p>
         <hr />
-        <div className="option">
+        {/* <div className="option">
           <h1>Language:</h1>
           <select id="" onChange={(e) => handleChange(e)}>
             <option value="english">English</option>
             <option value="japanese">Japanese</option>
           </select>
-        </div>
+        </div> */}
         {fansite
           ?.filter((o) => o.member.includes(active))
           .map((mem, index) => (
