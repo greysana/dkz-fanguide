@@ -16,7 +16,7 @@ import { gallery } from "../API/galleryImages";
 import { AiOutlineClose } from "react-icons/ai";
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs, Autoplay]);
 
-const ImagePopUp = ({ selected, index }) => {
+const ImagePopUp = ({ selected, index, images }) => {
   const [active, setactive] = useState(index - 1);
   return (
     <PopUpCon>
@@ -38,10 +38,10 @@ const ImagePopUp = ({ selected, index }) => {
               setactive(swiper.activeIndex);
             }}
           >
-            {gallery[0]?.images?.slice(0, 8).map((mem, index) => (
+            {images?.slice(0, 8).map((mem, index) => (
               <SwiperSlide key={index}>
                 <img
-                  src={mem?.link}
+                  src={mem?.imgLink}
                   alt={mem?.alt}
                   onClick="disable"
                   style={{

@@ -29,43 +29,7 @@ import InfoCons from "./pageSections/InfoCons";
 import GalleryCon from "./pageSections/GalleryCon";
 
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs, Autoplay]);
-const member = [
-  {
-    id: 0,
-    name: "Kyoungyoon 경윤",
-    images: Kyoungyoon,
-  },
-  {
-    id: 1,
-    name: "Sehyeon 세현",
-    images: Sehyeon,
-  },
-  {
-    id: 2,
-    name: "Mingyu 민규",
-    images: Mingyu,
-  },
-  {
-    id: 3,
-    name: "Munik 문익",
-    images: Munik,
-  },
-  {
-    id: 4,
-    name: "Jaechan 재찬",
-    images: Jaechan,
-  },
-  {
-    id: 5,
-    name: "Jonghyeong 종형",
-    images: Jonghyeong,
-  },
-  {
-    id: 6,
-    name: "Giseok  기석",
-    images: Giseok,
-  },
-];
+
 const images = [
   {
     id: 1,
@@ -104,7 +68,7 @@ function useIsInViewport(ref) {
 }
 
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs, Autoplay]);
-const AboutDKZ = () => {
+const AboutDKZ = ({ member, dkz }) => {
   let navigate = useNavigate();
   const [change, setchange] = useState(false);
   const top = useRef(null);
@@ -117,7 +81,7 @@ const AboutDKZ = () => {
 
   const timeView = useIsInViewport(timeline);
   const galView = useIsInViewport(gallery);
-
+  //const info = member?.find((mems) => mems.name === mem);
   console.log(introView, timeView, galView);
   // console.log("isInViewport1: ", isInViewport1);
   // useEffect(() => {
@@ -209,7 +173,7 @@ const AboutDKZ = () => {
                       borderRadius: "20px",
                       //margin: "1.3rem",
                       boxShadow: "0px 0px 2px 2px rgba(0, 0, 0, 0.3)",
-
+                      objectFit: "contain",
                       top: "3rem",
                       // filter:
                       //   active === index ? "brightness(1)" : "brightness(0.30)",
@@ -222,7 +186,7 @@ const AboutDKZ = () => {
           </SwiperCon>
         </div>
 
-        <InfoCon />
+        <InfoCon info={dkz ? dkz[0] : ""} />
       </div>
 
       <MemberCon member={member} />

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Years from "./timelinesections/Years";
 import { year } from "../../API/timeline";
 import { useLocation } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
 const InfoCons = () => {
   const [active, setactive] = useState("2018");
@@ -10,9 +11,11 @@ const InfoCons = () => {
     setactive(menuItem);
   };
 
+  const years = [2018, 2019, 2020, 2021, 2022];
   const location = useLocation();
-  console.log(location);
+  const { data: timeline, loading, error, reFetch } = useFetch("/timelines");
 
+  console.log(timeline);
   return (
     <InfoCon>
       <div className="infocon">
@@ -20,35 +23,40 @@ const InfoCons = () => {
         <div className="body">
           <div className="line"></div>
           <ul>
-            {year?.map((yr) => (
-              <li>
-                <button className={active === yr.year ? "active" : ""}>
-                  .
-                </button>
-                <span>
-                  <button
-                    className={active === yr.year ? "desc active" : "desc"}
-                    onClick={() => {
-                      if (!active) {
-                        setactive(yr.year);
-                      } else if (active && active === yr.year) {
-                        setactive("");
-                      } else {
-                        setactive(yr.year);
-                      }
-                    }}
-                  >
-                    Year {yr.year}
-                    {"   -   "}
-                    {yr.desc}
-                  </button>
-                </span>
-                {active === yr.year && (
-                  <div className="content">
-                    <Years content={yr.content} />
-                  </div>
-                )}
-              </li>
+            {years.map((year, i) => (
+              <>
+                <li>
+                  <button className={active === year ? "active" : ""}>.</button>
+                  <span>
+                    <button
+                      className={active === year ? "desc active" : "desc"}
+                      onClick={() => {
+                        if (!active) {
+                          setactive(year);
+                        } else if (active && active === year) {
+                          setactive("");
+                        } else {
+                          setactive(year);
+                        }
+                      }}
+                    >
+                      Year {year}
+                    </button>
+                  </span>
+                  {active === year && (
+                    <>
+                      {timeline
+                        ?.filter((t) => t?.date?.year === year)
+                        ?.sort((a, b) => (a.date.day < b.date.day ? -1 : 1))
+                        ?.map((yr, i) => (
+                          <div className="content">
+                            <Years content={[yr]} key={i} />
+                          </div>
+                        ))}
+                    </>
+                  )}
+                </li>
+              </>
             ))}
           </ul>
         </div>
@@ -121,7 +129,8 @@ const InfoCon = styled.div`
           text-align: left;
           margin: 1rem 0;
           & .content {
-            position: relative;
+            width: 100%;
+            // position: relative;
             margin-left: 47.5px;
             @media (max-width: 750px) {
               margin-left: 30px;

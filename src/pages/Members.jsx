@@ -23,61 +23,62 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import MemInfoCon from "./pageSections/MemInfoCon";
-
+import useFetch from "../hooks/useFetch";
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs, Autoplay]);
 const member = [
   {
     id: 0,
-    name: "Kyoungyoon 경윤",
+    name: "Lee Kyoungyoon",
     images: Kyoungyoon,
   },
   {
     id: 1,
-    name: "Sehyeon 세현",
+    name: "Kim Sehyeon",
     images: Sehyeon,
   },
   {
     id: 2,
-    name: "Mingyu 민규",
+    name: "Jeon Mingyu",
     images: Mingyu,
   },
   {
     id: 3,
-    name: "Munik 문익",
+    name: "Jang Munik",
     images: Munik,
   },
   {
     id: 4,
-    name: "Jaechan 재찬",
+    name: "Park Jaechan",
     images: Jaechan,
   },
   {
     id: 5,
-    name: "Jonghyeong 종형",
+    name: "Kim Jonghyeong",
     images: Jonghyeong,
   },
   {
     id: 6,
-    name: "Giseok  기석",
+    name: "Ryu Giseok",
     images: Giseok,
   },
   {
     id: 7,
-    name: "Wondae 원대",
+    name: "Seol Wondae",
     images: Wondae,
   },
 ];
-const Members = () => {
+const Members = ({ data }) => {
   let navigate = useNavigate();
   const [active, setactive] = useState(0);
   // console.log(member[1].images);
 
   const { mem } = useParams();
 
-  const act = member.find((mems) => mems.name === mem)?.id;
-  const info = member.find((mems) => mems.name === mem);
+  const act = member?.find((mems) => mems.name === mem).id;
+  const info = data?.find((mems) => mems.name === mem);
   console.log(act);
 
+  console.log(data);
   useEffect(() => {
     setactive(parseInt(act));
   }, [act]);
@@ -102,14 +103,14 @@ const Members = () => {
           onSlideChange={(swiper) => {
             // console.log("Slide index changed to: ", swiper.activeIndex);
             setactive(swiper.activeIndex);
-            navigate(`/members/${member[swiper.activeIndex].name}`);
+            navigate(`/members/${data[swiper.activeIndex]?.name}`);
           }}
           // onReachEnd={() => console.log("Swiper end reached")}
         >
-          {member?.map((mem, index) => (
+          {data?.map((mem, index) => (
             <SwiperSlide key={index}>
               <img
-                src={mem?.images}
+                src={mem?.displayPic[0]?.imgLink}
                 alt={mem?.name}
                 style={{
                   position: "relative",
@@ -124,7 +125,7 @@ const Members = () => {
                   filter:
                     active === index ? "brightness(1)" : "brightness(0.30)",
                   //top: active === index ? "-10px" : "0px",
-                  "@media (max-width: 500px)": {
+                  "@media (maxWidth: 500px)": {
                     height: active === index ? "350px" : "270px",
                   },
                 }}
@@ -134,7 +135,7 @@ const Members = () => {
         </Swiper>
       </SwiperCon>
       <Info className="heading"></Info>
-      <MemInfoCon name={info.name} />
+      <MemInfoCon info={info} />
     </MemberCon>
   );
 };
@@ -144,6 +145,7 @@ const MemberCon = styled.div`
   height: 100vh;
   //width: 75vw;
   overflow-y: auto;
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     visibility: hidden;
     width: 0px;

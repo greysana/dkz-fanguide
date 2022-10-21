@@ -24,7 +24,7 @@ const FloatBar = ({ selected }) => {
       selected(false);
     }
     if (menuItem === "members") {
-      navigate(`/${menuItem}/Kyoungyoon 경윤/`);
+      navigate(`/${menuItem}/Lee Kyoungyoon/`);
     } else if (menuItem === "fan-community") {
       navigate(`/${menuItem}/fan-site/dkz`);
     } else {
@@ -188,7 +188,7 @@ const FloatBar = ({ selected }) => {
 
               <MenuItem
                 className="link"
-                to="/members/Kyoungyoon 경윤/"
+                to="/members/Lee Kyoungyoon/"
                 onClick={_handleClick.bind(this, "members")}
               >
                 <text className={active === "members" ? "menu active" : "menu"}>

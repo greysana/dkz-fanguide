@@ -283,7 +283,7 @@ const FanEditor = () => {
         </button>
       </div>
       <div className="mainCon">
-        <h1 className="head">Fan Translator</h1>
+        <h1 className="head">Fan Editor</h1>
         <p className="head">
           {" "}
           lorem 매일 행복할 순 없지만, 행복한 것들을 매일 있다 - 세현 🐰 You
@@ -344,11 +344,6 @@ const FanEditor = () => {
                     onInit={(swiper) =>
                       console.log("Swiper initialized!", swiper)
                     }
-                    // onSlideChange={(swiper) => {
-                    //   // console.log("Slide index changed to: ", swiper.activeIndex);
-                    //   setactive(swiper.activeIndex);
-                    // }}
-                    // onReachEnd={() => console.log("Swiper end reached")}
                   >
                     {mem?.highlightTweets?.map((mems, i) => (
                       <SwiperSlide key={i}>

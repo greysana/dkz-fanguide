@@ -62,11 +62,13 @@ const GalleryCons = styled.div`
     border: 1px solid #ffffff6e;
     flex-wrap: wrap;
     margin: auto;
-    width: 80%;
+    width: 90%;
     z-index: 13;
-
+    @media (min-width: 500px) and (max-width: 768px) {
+      width: 98%;
+    }
     & .imagesCon {
-      margin: 1rem;
+      margin: 0.5rem;
       margin-top: 2rem;
       display: flex;
       flex-wrap: wrap;

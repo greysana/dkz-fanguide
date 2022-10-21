@@ -148,11 +148,13 @@ const Sidebars = styled.div`
 const Shadow = styled.div`
   visibility: hidden;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 0px;
+  height: 0px;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 25;
   &.active {
+    width: 100vw;
+    height: 100vh;
     visibility: visible;
   }
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Dongree from "../../Assets/Dongreefull.png";
 import Silver from "../../Assets/silverstarlight.png";
@@ -11,9 +11,17 @@ import { FaSpotify } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import fancafe from "../../Assets/fancafe.png";
 
+import { BsPlayFill } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
-const InfoCon = () => {
+const InfoCon = ({ info }) => {
+  const [exAct, setexAct] = useState("");
+  const [exActM, setexActM] = useState("");
+
+  const navigate = useNavigate();
+  console.log(info);
   return (
     <InfoCons>
       <div className="heading">
@@ -146,6 +154,155 @@ const InfoCon = () => {
             </li>
           </ul>
         </div>
+        <div className="tablecon">
+          <div className="theading">
+            <h1>Activities/Shows</h1>
+          </div>
+          <div className="tablewrap">
+            <ul>
+              {info?.activities?.map((mem, i) => (
+                <li className={exAct === i ? " active" : " inactive"} key={i}>
+                  <div className={exAct === i ? "con active" : "con inactive"}>
+                    <img
+                      src={mem.imgLink}
+                      alt=""
+                      className={exAct === i ? " active" : " inactive"}
+                    />
+                    <div
+                      className={
+                        exAct === i ? "title active" : "title inactive"
+                      }
+                    >
+                      <h1>Title: {mem.title}</h1>
+                      <h2>
+                        Category:{"  "}
+                        {mem.actType}
+                      </h2>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      exAct === i ? "details active" : "details inactive"
+                    }
+                  >
+                    <span>Summary/About: {mem.body}</span>
+
+                    <span>Date: {mem.date}</span>
+                    <span className="link ">
+                      <motion.button
+                        whileHover={{ scale: 0.95 }}
+                        className="s"
+                        onClick={() => {
+                          navigate(mem.vidlink ? mem.vidLink : mem.ytLink);
+                        }}
+                      >
+                        {" "}
+                        Watch Here{" "}
+                        <i>
+                          <BsPlayFill />
+                        </i>
+                      </motion.button>
+                    </span>
+                  </div>
+
+                  <button
+                    className="arrow"
+                    onClick={() => {
+                      exAct !== i ? setexAct(i) : setexAct("");
+                    }}
+                  >
+                    {exAct === i ? (
+                      <>
+                        close
+                        <i>
+                          <IoIosArrowUp />
+                        </i>
+                      </>
+                    ) : (
+                      <>
+                        Expand Details{" "}
+                        <i>
+                          <IoIosArrowDown />
+                        </i>
+                      </>
+                    )}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="tablecon">
+          <div className="theading">
+            <h1>Movies/Series</h1>
+          </div>
+          <div className="tablewrap">
+            <ul>
+              {info?.drama?.map((mem, i) => (
+                <li className={exAct === i ? " active" : " inactive"} key={i}>
+                  <div className={exAct === i ? "con active" : "con inactive"}>
+                    <img
+                      src={mem.imgLink}
+                      alt=""
+                      className={exAct === i ? " active" : " inactive"}
+                    />
+                    <div
+                      className={
+                        exAct === i ? "title active" : "title inactive"
+                      }
+                    >
+                      <h1>Title: {mem.title}</h1>
+                      <h2>Role: {mem.role}</h2>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      exAct === i ? "details active" : "details inactive"
+                    }
+                  >
+                    <span>Summary/About: {mem.desc}</span>
+
+                    <span>Date: {mem.date}</span>
+                    <span>Episode/s:{mem.noOfEp}</span>
+                    <span className="link">
+                      <button
+                        onClick={() => {
+                          navigate(mem.vidlink ? mem.vidLink : mem.ytLink);
+                        }}
+                      >
+                        {" "}
+                        Watch Here{" "}
+                      </button>
+                    </span>
+                  </div>
+
+                  <button
+                    className="arrow"
+                    onClick={() => {
+                      exActM !== i ? setexActM(i) : setexActM("");
+                    }}
+                  >
+                    {exActM === i ? (
+                      <>
+                        close
+                        <i>
+                          <IoIosArrowUp />
+                        </i>
+                      </>
+                    ) : (
+                      <>
+                        Expand Details{" "}
+                        <i>
+                          <IoIosArrowDown />
+                        </i>
+                      </>
+                    )}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </InfoCons>
   );
@@ -158,10 +315,194 @@ const InfoCons = styled.div`
 
   & .infoCons {
     display: flex;
-    width: 80%;
+    width: 85%;
     margin: auto;
+    @media (max-width: 800px) {
+      width: 95%;
+    }
     flex-wrap: wrap;
+    & .tablecon {
+      //   background-color: #91919122;
+      // display: flexbox;
+      border-radius: 15px;
+      border: 1px solid #ffffff6e;
+      margin: 1rem auto;
 
+      position: relative;
+      width: 50%;
+      z-index: 15;
+
+      @media (max-width: 1080px) {
+        width: 70%;
+      }
+      @media (max-width: 780px) {
+        width: 85%;
+      }
+      @media (max-width: 550px) {
+        width: 100%;
+      }
+
+      & .tablewrap {
+        margin: auto;
+        width: 90%;
+        ul {
+          list-style: none;
+          color: #fff;
+          margin: auto;
+          padding: 0;
+          li {
+            display: flex;
+
+            flex-direction: column;
+
+            width: 100%;
+            align-items: center;
+            background-color: #91919122;
+            margin: 0.5rem auto;
+            border-radius: 10px;
+            box-shadow: 1px 1px 2px 2px rgba(44, 44, 44, 0.3);
+            cursor: pointer;
+            padding-bottom: 1rem;
+            & .con.inactive {
+              display: inline-flex;
+              width: 100%;
+            }
+            & .arrow {
+              font-size: 13px;
+              color: #bedc4a;
+              cursor: pointer;
+              background-color: transparent;
+              border: none;
+              & i {
+                position: relative;
+                top: 5px;
+                margin-right: 10px;
+                font-size: 1rem;
+              }
+            }
+            & img {
+              margin: auto;
+              &.inactive {
+                width: 100px;
+                height: 100px;
+                position: relative;
+                left: 0px;
+                margin: 0;
+              }
+              width: 200px;
+              height: 200px;
+              object-fit: cover;
+            }
+            & .title {
+              padding: 5px 1.5rem;
+              &.inactive {
+                height: 80px;
+
+                display: flex;
+                flex-wrap: wrap;
+                padding-top: 1rem;
+                & h1 {
+                  margin-right: 1rem;
+                }
+              }
+              &.active {
+                width: 90%;
+                & h1 {
+                  margin-bottom: 2rem;
+                }
+              }
+              span {
+                margin-top: 1rem;
+                text-align: left;
+              }
+              & h1 {
+                font-size: 1rem;
+                color: #f3f3f3;
+
+                text-shadow: 0px 4px 2px rgba(44, 44, 44, 0.5);
+              }
+            }
+            & .details {
+              &.inactive {
+                height: 0;
+                visibility: hidden;
+              }
+              &.active {
+                visibility: visible;
+              }
+              display: flex;
+              width: 90%;
+              flex-direction: column;
+              margin: auto;
+            }
+            span {
+              width: 90%;
+              margin: 0.5rem auto;
+              text-align: left;
+              &.link {
+                position: relative;
+                width: 90%;
+                margin: auto;
+                button {
+                  color: #fff;
+                  background-color: #bc185a;
+                  border: none;
+                  padding: 10px 20px;
+                  border-radius: 10px;
+                  margin: auto;
+                  box-shadow: 1px 1px 2px 2px rgba(44, 44, 44, 0.3);
+                  position: absolute;
+                  right: 0rem;
+                  top: -2rem;
+                  cursor: pointer;
+                  &.s {
+                    position: relative;
+                    top: 0;
+                    & i {
+                      font-size: 1.2rem;
+                      object-fit: contain;
+                      position: relative;
+                      top: 3px;
+                      right: -5px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          li:hover {
+          }
+          li:nth-child(even) {
+            background-color: #48484820;
+          }
+        }
+      }
+      & .theading {
+        position: relative;
+        //width: 100%;
+        /* justify-content: center;
+      align-items: center; */
+        margin: auto;
+        & h1 {
+          font-size: 1rem;
+          text-align: center;
+          margin: 1rem auto;
+          color: #f3f3f3;
+          margin-bottom: 2rem;
+          text-shadow: 0px 4px 2px rgba(44, 44, 44, 0.5);
+        }
+      }
+
+      & h2 {
+        text-align: left;
+        font-weight: 600;
+        font-size: 1rem;
+        color: #e6e6e6;
+        margin-bottom: 2rem;
+        text-shadow: 0px 4px 2px rgba(44, 44, 44, 0.5);
+        margin-left: 1rem;
+      }
+    }
     & .infocon {
       background-color: #91919122;
       // display: flexbox;
@@ -328,6 +669,7 @@ const InfoCons = styled.div`
     & .infocon3 {
       background-color: #91919122;
       width: 350px;
+      height: 300px;
       border-radius: 15px;
       border: 1px solid #ffffff6e;
       //flex-wrap: wrap;

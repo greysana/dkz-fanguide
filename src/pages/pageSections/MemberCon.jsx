@@ -24,8 +24,12 @@ const MemberCon = ({ member }) => {
                 whileHover={{ scale: 1.02 }}
                 onClick={() => navigate(`/members/${mem.name}`)}
               >
-                <img src={mem.images} alt={mem.name} />
-                <h2>{mem.name}</h2>
+                <img src={mem?.displayPic[0].imgLink} alt={mem.name} />
+                <h2>
+                  {mem.name}
+                  {"  "}
+                  {mem.krName}
+                </h2>
               </motion.div>
             ))}
           </div>
@@ -36,7 +40,7 @@ const MemberCon = ({ member }) => {
               className="cards"
               key={1}
               whileHover={{ scale: 1.02 }}
-              onClick={() => navigate(`/members/Wondae 원대`)}
+              onClick={() => navigate(`/members/Seol Wondae`)}
             >
               <img src={Wondae} alt={"wondae 원대"} />
               <h2>Wondae 원대</h2>
@@ -223,6 +227,7 @@ const MemberCons = styled.div`
     border-top-right-radius: 15px;
     width: 180px;
     height: 190px;
+    object-fit: cover;
     @media (max-width: 500px) {
       width: 150px;
       height: 160px;
