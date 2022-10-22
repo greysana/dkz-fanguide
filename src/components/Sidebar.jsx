@@ -386,7 +386,7 @@ const Nav = styled.div`
   position: relative;
   border-left: 4px solid #0b0b0b;
   margin: auto;
-  margin-left: 3rem;
+  margin-left: 2rem;
   margin-right: 1rem;
 
   //width: 100%;

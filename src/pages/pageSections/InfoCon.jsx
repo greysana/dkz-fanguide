@@ -187,7 +187,9 @@ const InfoCon = ({ info }) => {
                   >
                     <span>Summary/About: {mem.body}</span>
 
-                    <span>Date: {mem.date}</span>
+                    <span>
+                      Date: {mem.date.month}-{mem.date.day}-{mem.date.year}
+                    </span>
                     <span className="link ">
                       <motion.button
                         whileHover={{ scale: 0.95 }}
@@ -262,7 +264,9 @@ const InfoCon = ({ info }) => {
                   >
                     <span>Summary/About: {mem.desc}</span>
 
-                    <span>Date: {mem.date}</span>
+                    <span>
+                      Date:{mem.date.month}-{mem.date.day}-{mem.date.year}
+                    </span>
                     <span>Episode/s:{mem.noOfEp}</span>
                     <span className="link">
                       <button
